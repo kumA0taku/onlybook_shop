@@ -10,9 +10,8 @@
 
 <?php
 require("connect_db.php");
-$sql = " SELECT * FROM stock 
-JOIN book ON book.book_id = stock.book_id
-JOIN category ON book.category_id = category.category_id "; //query DB
+$sql = " SELECT * FROM order_book
+join user on order_book.user_id = user.user_id"; //query DB
 $rs = mysqli_query($conn, $sql);
 ?>
 
@@ -26,22 +25,16 @@ $rs = mysqli_query($conn, $sql);
 <button style="font-size:150%;" onclick="document.location='/onlybook_shop/admin_system/order/order_status.php'">Order Status</button>
 </table><br>
 
-<table>
-<button style="font-size:100%;" onclick="document.location='add_stock.php'">Add Stock</button>
-<button style="font-size:100%;" onclick="document.location='/onlybook_shop/admin_system/stock_book/stock_book_home.php'">Book</button>
-<button style="font-size:100%;" onclick="document.location='bank.php'">Category</button>
-</table><br>
-
 <table border="1" >
-    <tr style="font-size:180%;"><td>Book Name</td><td>Category</td><td>QTY</td><td>Price</td><td>Operation</td></tr>
+    <tr style="font-size:180%;"><td>User ID</td><td>User Name</td><td>Delivery Status</td><td>Payment Status</td><td>Operation</td></tr>
 <?php
 while($row = mysqli_fetch_assoc($rs)){
     print("<tr style = 'font-size:150%;'>\n");
-    print("<td >".$row["book_name"]."</td>");
-    print("<td >".$row["category_name"]."</td>");
-    print("<td >".$row["qty"]."</td>");
-    print("<td >".$row["price"]."</td>");
-    print("<td ><a href=edit_product.php?ID=".$row["stock_id"].">Edit</a> </td>"); //edit button
+    print("<td >".$row["user_id"]."</td>");
+    print("<td >".$row["user_name"]."</td>");
+    print("<td >".$row["delivery_status"]."</td>");
+    print("<td >".$row["payment_status"]."</td>");
+    print("<td ><a href=edit_product.php?ID=".$row["payment_id"].">Edit</a> </td>"); //edit button
     print("</tr>\n");
 }
 ?>
