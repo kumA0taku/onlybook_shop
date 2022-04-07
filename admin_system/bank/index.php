@@ -1,5 +1,5 @@
 <?php
-require("connect_db.php");
+require("../connect_db.php");
 $sql = " SELECT * FROM bank"; //query DB
 $rs = mysqli_query($conn, $sql);
 ?>
@@ -12,7 +12,7 @@ $rs = mysqli_query($conn, $sql);
             <div class="app-card-body">
                 <div class="row g-3 mb-4 align-items-center justify-content-between">
                     <div class="col-auto">
-                        <a class="btn btn-success" href="#">
+                        <a href="?page=<?=$_GET['page']?>&function=add" class="btn btn-success ">
                             Add Bank
                         </a>
                     </div>
@@ -31,7 +31,7 @@ $rs = mysqli_query($conn, $sql);
                                 <td><?= $data['bank_no'] ?></td>
                                 <td><?= $data['bank_name'] ?></td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="?page=<?=$_GET['page']?>&function=update&id=<?=$data['bank_id']?>" class="btn btn-sm btn-warning">Edit</a>
                                     <a href="" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>
