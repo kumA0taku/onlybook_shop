@@ -13,7 +13,15 @@
             <div class="container-xl">
                 <?php
                 if (!isset($_GET['page']) && empty($_GET['page'])) {
-                    include('stock/index.php'); //stock
+                    include('category/index.php'); //temp
+                }elseif (isset($_GET['page']) && $_GET['page'] == 'stock') { //stock
+                    if(isset($_GET['function']) && $_GET['function'] == 'add_stock')
+                    {
+                        include('stock/insert.php');
+                    }
+                    else{
+                        include('stock/index.php'); 
+                    }
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'book') {
                     include('book/index.php'); //book
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'bank') { //bank
