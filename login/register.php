@@ -11,9 +11,9 @@
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
 
-        $user_check = "SELECT * FROM user WHERE username = '$username' LIMIT 1";
+        $user_check = "SELECT * FROM user1 WHERE username = '$username' LIMIT 1";
         $result = mysqli_query($conn, $user_check);
-        $user = mysqli_fetch_assoc( $result);
+        $user = mysqli_fetch_assoc($result);
 
         if ($user['username'] === $username) {
             echo "<script>alert('Username already exists');</script>";
