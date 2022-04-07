@@ -20,7 +20,7 @@
         } else {
             $passwordenc = md5($password);
 
-            $query = "INSERT INTO user (username, password, firstname, lastname, userlevel)
+            $query = "INSERT INTO user1 (username, password, firstname, lastname, userlevel)
                         VALUE ('$username', '$passwordenc', '$firstname', '$lastname', 'm')";
             $result = mysqli_query($conn, $query);
 

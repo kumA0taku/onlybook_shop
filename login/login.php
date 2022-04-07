@@ -23,7 +23,7 @@
             $_SESSION['userlevel'] = $row['userlevel'];
 
             if ($_SESSION['userlevel'] == 'a') {
-                header("Location: admin_page.php");
+                header("Location: /onlybook_shop/admin_system/index.php");
             }
 
             if ($_SESSION['userlevel'] == 'm') {
