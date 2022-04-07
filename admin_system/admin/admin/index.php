@@ -1,8 +1,8 @@
 
-
 <?php
+include("../book/connect.php");
 $sql = "SELECT * FROM book";
-$query = mysqli_query($connect,$sql);
+$query = mysqli_query($conn,$sql);
 
 
 ?>
@@ -55,4 +55,4 @@ $query = mysqli_query($connect,$sql);
 						</div><!--//app-card-->
 	                </div>
                 </div><!--//row-->
-                <?php mysqli_close($connect); ?>
+                <?php mysqli_close($conn); ?>
