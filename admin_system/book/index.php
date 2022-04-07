@@ -1,4 +1,10 @@
-<?php include("connect.php") ?>
+<?php
+require("../connect_db.php");
+$sql = "SELECT * FROM book";
+$query = mysqli_query($conn,$sql);
+?>
+
+<?php include('include/script.php') ?>
 <h1 class="app-page-title">Books</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">
@@ -10,3 +16,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#tabelAll').DataTable();
+    });
+</script>
+<?php mysqli_close($conn); ?>

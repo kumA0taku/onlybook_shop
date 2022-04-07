@@ -1,15 +1,16 @@
 
-<!div class="app-wrapper">
-        <!div class="app-content pt-3 p-md-3 p-lg-4">
-        <!div class="container-xl">
-        <h1 class="app-page-title" >เพิ่มข้อมูลหนังสือ</h1>
-        <hr class="mb-8" >
-                <div class="row g-4 settings-section">
-	                
-	                <div class="col-12 col-md-12" >
-		                <div class="app-card app-card-settings shadow-sm p-5" >
-						    
-						    <div class="app-card-body" >
+<?php include('../connect_db.php') ?>
+<?php include('include/script.php') ?>
+<h1 class="app-page-title">Book</h1>
+<hr class="mb-4">
+<div class="row g-4 setting-section">
+    <div class="col-12 col-md-12">
+        <div class="app-card app-card-setting shadow-sm p-4">
+            <div class="app-card-body">
+
+                <div class="app-content pt-3 p-md-3 p-lg-4">
+                    <div class="container-xl">
+                    <div class="app-card-body" >
                                 <?php 
                                     //print_r($_POST);
                                     if(isset($_POST) && !empty($_POST))
@@ -107,17 +108,14 @@
 									<button type="submit" class="btn app-btn-primary" >Save </button>
 							    </form>
 						    </div><!--//app-card-body-->
-						    
-						</div><!--//app-card-->
-	                </div>
-                </div><!--//row-->
-                
-            <!--//container-fluid-->
-        </!div>
-        <!--//app-content-->
-        <!--<!?php include('include/footer.php') ?>-->
-        <!--//app-footer -->
-    </!div>
+                    </div>
+                    <!--//container-fluid-->
+                </div>
+                <!--//app-content-->
+            </div>
+        </div>
+    </div>
+</div>
     <script type="text/javascript">
             function readURL(input){
                 if(input.files && input.files[0]){
@@ -132,4 +130,5 @@
                 readURL(this);
             });
     </script>
+    
 

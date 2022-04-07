@@ -1,6 +1,6 @@
 
 <?php
-include("../book/connect.php");
+
 $sql = "SELECT * FROM book";
 $query = mysqli_query($conn,$sql);
 
@@ -8,14 +8,14 @@ $query = mysqli_query($conn,$sql);
 ?>
 <h1 class="app-page-title p-4">ตารางข้อมูลหนังสือ</h1>
         <hr class="mb-12">
-                <div class="row g-20 settings-section">
+                <div class="row g-4 settings-section">
 	                
 	                <div class="col-12 col-md-12">
 		                <div class="app-card app-card-settings shadow-sm p-4">
 						    
 						    <div class="app-card-body">
-                                <a href="?page=<?=$_GET['page']?> &function=add" class="byn btn-success p-2 mb-2 float-right">Add</a>
-                            <table class="table" id="mytable">
+                                <a href="?page=<?=$_GET['page']?> &function=add" class="byn btn-success p-1 mb-5 float-right">Add book</a>
+                            <table class="table mb-4" id="tabelAll">
                                 <thead>
                                     <tr>
                                     <th scope="col">id</th>
@@ -41,11 +41,11 @@ $query = mysqli_query($conn,$sql);
                                             <td>
                                                 <a href="?page=>?=$_GET['page']?>&function=update&id=<?=$data['book_id']
                                                 
-                                                ?>" class="btn btn-sm btn-warning float-down">Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger ">Delete</a>
+                                                ?>" class="btn btn-sm btn-warning p-1 mb-2 ">Edit</a>
+                                                <a href="" class="btn btn-sm btn-danger p-1 mb-2">Delete</a>
                                                 </td>
                                         </tr>
-                                       
+                                    
 
                                     
                                 </tbody>
