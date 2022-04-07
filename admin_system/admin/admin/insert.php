@@ -1,4 +1,4 @@
-<!h1 class="app-page-title">Overview</!h1>
+
 <!div class="app-wrapper">
         <!div class="app-content pt-3 p-md-3 p-lg-4">
         <!div class="container-xl">
@@ -74,28 +74,34 @@
                                         <div class="mb-23">
                                         <img id="preview" width="150" height="150">
                                         </div>
+                                        <button onclick="return triggerFile();" class="btn vtb-success">เลือกรูปภาพ</button>
 									    <input type="file" class="form-control" name="book_img" id="image">
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">ID </label>
-									    <input type="text" class="form-control" name="book_id" placeholder="id"  required>
+									    <input type="text" class="form-control" name="book_id" placeholder="id" value="<?=(isset($_POST
+                                        ['book_id']) ? $_POST['book_id'] : "")?>" autocomplete="off" required>
 									</div>
 								    
                                     <div class="mb-3">
 									    <label  class="form-label">Category</label>
-									    <input type="text" class="form-control" name="category_id" placeholder="หมวดหมู่"  required>
+									    <input type="text" class="form-control" name="category_id" placeholder="หมวดหมู่" value="<?=(isset($_POST
+                                        ['category_id']) ? $_POST['category_id'] : "")?>" autocomplete="off" required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Name</label>
-									    <input type="text" class="form-control" name="book_name" placeholder="ชื่อหนังสือ"  required>
+									    <input type="text" class="form-control" name="book_name" placeholder="ชื่อหนังสือ" value="<?=(isset($_POST
+                                        ['Name']) ? $_POST['Name'] : "")?>" autocomplete="off"  required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Price </label>
-									    <input type="text" class="form-control" name="price" placeholder="ราคา"  required>
+									    <input type="text" class="form-control" name="price" placeholder="ราคา" value="<?=(isset($_POST
+                                        ['Price']) ? $_POST['Price'] : "")?>" autocomplete="off" required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Description</label>
-									    <input type="text" class="form-control" name="description" placeholder="รายละเอียด"  required>
+									    <input type="text" class="form-control" name="description" placeholder="รายละเอียด" value="<?=(isset($_POST
+                                        ['description']) ? $_POST['description'] : "")?>" autocomplete="off" required>
 									</div>
                                     
 									<button type="submit" class="btn app-btn-primary" >Save </button>
@@ -125,5 +131,5 @@
             $("#image").change(function() {
                 readURL(this);
             });
-         </script>
+    </script>
 

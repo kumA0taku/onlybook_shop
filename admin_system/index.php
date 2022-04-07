@@ -15,10 +15,17 @@
         <?php if(!isset($_GET['page']) && empty($_GET['page'])){
             include("dashboard/index.php");
         } elseif(isset($_GET['page']) && $_GET['page'] == 'book'){
-            if(isset($_GET['function']) && $_GET['function'] =="Add"){
-                include("admin/admin/insert.php.php");
+            if(isset($_GET['function']) && $_GET['function']=="add"){
+                include("admin/admin/insert.php"); 
             }
-            include("book/index.php");
+            elseif(isset($_GET['function']) && $_GET['function']=="update"){
+                include("admin/admin/edit.php"); 
+            }
+            else{
+                include("book/index.php");
+            }
+            
+            
         }
         
         ?>

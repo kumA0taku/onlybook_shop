@@ -1,8 +1,6 @@
 <?php 
 $sql = "SELECT * FROM stock";
 $query = mysqli_query($connect,$sql);
-
-
 ?>
 <h1 class="app-page-title">Add Stock</h1>
         <hr class="mb-4">
@@ -31,6 +29,9 @@ $query = mysqli_query($connect,$sql);
                                             <td><?=$data['stock_id']?></td>
                                             <td><?=$data['book_id']?></td>
                                             <td><?=$data['qty']?></td>
+                                            <td>
+                                            <button type="button" href="" class="btn btn-sm btn-warning">Edit</button>
+                                            </td>
                                             <td>
                                                 <a href="" class="btn btn-sm btn-warning">Edit</a>
                                                 <a href="" class="btn btn-sm btn-danger">Delete</a>

@@ -14,7 +14,7 @@ $query = mysqli_query($connect,$sql);
 		                <div class="app-card app-card-settings shadow-sm p-4">
 						    
 						    <div class="app-card-body">
-                                <a href="?page=<?=$_GET['page']?> &function=add" class="byn btn-success p-2 float-right">Add</a>
+                                <a href="?page=<?=$_GET['page']?> &function=add" class="byn btn-success p-2 mb-2 float-right">Add</a>
                             <table class="table" id="mytable">
                                 <thead>
                                     <tr>
@@ -38,10 +38,16 @@ $query = mysqli_query($connect,$sql);
                                             <td><?=$data['price']?></td>
                                             <td><?=$data['description']?></td>
                                             <td><img src="upload/admin/<?=$data['book_img']?>" width="100" height="100"></td>
-                                                <a href="" class="btn btn-sm btn-warning float-down">Edit</a>
+                                            <td>
+                                                <a href="?page=>?=$_GET['page']?>&function=update&id=<?=$data['book_id']
+                                                
+                                                ?>" class="btn btn-sm btn-warning float-down">Edit</a>
                                                 <a href="" class="btn btn-sm btn-danger ">Delete</a>
+                                                </td>
                                         </tr>
-                                    <?php ; ?>
+                                       
+
+                                    
                                 </tbody>
                                 </table>
 						    </div><!--//app-card-body-->
