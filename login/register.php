@@ -10,18 +10,19 @@
         $password = $_POST['password'];
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
 
         $user_check = "SELECT * FROM user1 WHERE username = '$username' LIMIT 1";
         $result = mysqli_query($conn, $user_check);
         $user = mysqli_fetch_assoc($result);
 
-        if ($user['username'] === $username) {
+        if ($user['username'] == $username) {
             echo "<script>alert('Username already exists');</script>";
         } else {
             $passwordenc = md5($password);
 
-            $query = "INSERT INTO user1 (username, password, firstname, lastname, userlevel)
-                        VALUE ('$username', '$passwordenc', '$firstname', '$lastname', 'm')";
+            $query = "INSERT INTO user1 (username, password, firstname, lastname, e-mail, userlevel)
+                        VALUE ('$username', '$passwordenc', '$firstname', '$lastname', '$email', 'm')";
             $result = mysqli_query($conn, $query);
 
             if ($result) {
@@ -66,6 +67,10 @@
         <label for="lastname">Lastname</label>
         <input type="text" name="lastname" placeholder="Enter your lastname" required>
         <br>
+        <label for="email">E-mail</label>
+        <input type="text" name="email" placeholder="Enter your email" required>
+        <br>
+
         <input type="submit" name="submit" value="Submit">
     
     </form>
