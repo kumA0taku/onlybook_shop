@@ -14,6 +14,7 @@
                 if(!isset($_GET['page']) && empty($_GET['page']))
                 {
                     include('stock/index.php'); //stock
+                    
                 }
                 elseif(isset($_GET['page']) && $_GET['page'] == 'book')
                 {
