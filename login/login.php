@@ -27,7 +27,7 @@
             }
 
             if ($_SESSION['userlevel'] == 'm') {
-                header("Location: user_page.php");
+                header("Location: /onlybook_shop/admin_system/index.php");
             }
         } else {
             echo "<script>alert('User หรือ Password ไม่ถูกต้อง);</script>";
