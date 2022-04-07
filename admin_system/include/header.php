@@ -155,7 +155,10 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="login.html">Log Out</a></li>
+                                <li><a class="dropdown-item" href="logout.html">log out</a></li>
+                            </ul>
+                            </li>
+                                <li><a class="dropdown-item" href="login.html">log in</a></li>
                             </ul>
                         </div>
                         <!--//app-user-dropdown-->
