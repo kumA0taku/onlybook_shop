@@ -10,7 +10,7 @@
         $password = $_POST['password'];
         $passwordenc = md5($password);
 
-        $query = "SELECT * FROM user1 WHERE username = '$username' AND password = '$passwordenc'";
+        $query = "SELECT * FROM user4 WHERE username = '$username' AND password = '$passwordenc'";
 
         $result = mysqli_query($conn, $query);
 
@@ -19,7 +19,6 @@
             $row = mysqli_fetch_array($result);
 
             $_SESSION['userid'] = $row['id'];
-            $_SESSION['user'] = $row['firstname'] . " " . $row['lastname'];
             $_SESSION['userlevel'] = $row['userlevel'];
 
             if ($_SESSION['userlevel'] == 'a') {

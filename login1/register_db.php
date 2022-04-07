@@ -43,7 +43,7 @@
         if (count($errors) == 0) {
             $password = md5($password_1);
 
-            $sql = "INSERT INTO user2 (username, email, password) VALUES ('$username', '$email', '$password')";
+            $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
             mysqli_query($conn, $sql);
 
             $_SESSION['username'] = $username;
