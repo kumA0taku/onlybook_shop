@@ -157,8 +157,7 @@
                                 </li>
                                 <li><a class="dropdown-item" href="logout.html">log out</a></li>
                             </ul>
-                            </li>
-                                <li><a class="dropdown-item" href="login.html">log in</a></li>
+                                <li><a class="dropdown-item" href="login.php">log in</a></li>
                             </ul>
                         </div>
                         <!--//app-user-dropdown-->
