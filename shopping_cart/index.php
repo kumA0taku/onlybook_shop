@@ -21,7 +21,7 @@
                     <th style="text-align: left;">Name</th>
                     <!-- <th style="text-align: left;">Code</th> -->
                     <th style="text-align: right;" width="5%">Quantily</th>
-                    <th style="text-align: right;" width="10%">Unit Price</th>
+                    <!-- <th style="text-align: right;" width="10%">Unit Price</th> -->
                     <th style="text-align: right;" width="10%">Price</th>
                     <th style="text-align: center;" width="5%">Remove</th>
                 </tr>
