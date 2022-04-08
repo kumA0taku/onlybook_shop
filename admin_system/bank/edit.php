@@ -20,29 +20,37 @@
                                         
                                         if(isset($_GET['bank_id']) && !empty($_GET['bank_id'])){
                                             $bank_id = $_GET['bank_id'];
-                                            
-                                            $bank_name=$_GET['bank_name'];
-                                            $bank_no=$_GET['bank_no'];
+                                            // $bank_name=$_GET['bank_name'];
+                                            // $bank_no=$_GET['bank_no'];
                                             $sql = "SELECT * FROM bank WHERE bank_id = '$bank_id'";
                                             $query = mysqli_query($conn, $sql);
                                             $result = mysqli_fetch_assoc($query);
-                                        }
-                                        if(isset($_POST) && !empty($_POST)){
-                                            $bank_name=$_POST['bank_name'];
-                                            $bank_no=$_POST['bank_no'];
-                                        // print_r($_POST);
-                                            // $bank_name=$_POST['bank_name'];
-                                            // $bank_no=$_POST['bank_no'];
 
-                                            // $sql = "INSERT INTO bank (bank_no,bank_name) VALUES('$bank_no', '$bank_name')";
-                                            // if(mysqli_query($conn, $sql)){
-                                            //     echo "Success!!";
-                                            // }else{
-                                            //     echo "Fail: ".$sql."<br>". mysqli_error($conn);
-                                            // }
-                                            // mysqli_close($conn);
-                                        } 
-                                        $sql = " UPDATE bank SET bank_name = '$bank_name', bank_no = '$bank_no' WHERE bank_id = '$bank_id'";
+                                            
+                                        $sql = "UPDATE bank SET bank_name = '$bank_name', bank_no = '$bank_no' WHERE bank_id = '$bank_id'";
+                                        if(mysqli_query($conn, $sql)){
+                                            echo "Success!!";
+                                        }else{
+                                            echo "Fail: ".$sql."<br>". mysqli_error($conn);
+                                        }
+                                        // mysqli_close($conn);
+                                        }
+
+                                        // if(isset($_POST) && !empty($_POST)){
+                                        //     $bank_name=$_POST['bank_name'];
+                                        //     $bank_no=$_POST['bank_no'];
+
+                                        // // print_r($_POST);
+                                        // //     $bank_name=$_POST['bank_name'];
+                                        // //     $bank_no=$_POST['bank_no'];
+                                        //     // $sql = "INSERT INTO bank (bank_no,bank_name) VALUES('$bank_no', '$bank_name')";
+                                        //     // if(mysqli_query($conn, $sql)){
+                                        //     //     echo "Success!!";
+                                        //     // }else{
+                                        //     //     echo "Fail: ".$sql."<br>". mysqli_error($conn);
+                                        //     // }
+                                        //     // mysqli_close($conn);
+                                        // } 
                                         ?>
                                         <form action="" method="post">
                                             <div class="mb-3">
