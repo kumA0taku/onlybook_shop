@@ -13,15 +13,15 @@
                 <?php
                 if(!isset($_GET['page']) && empty($_GET['page']))
                 {
-                    include('home.php '); //stock
+                    include('/shopping_cart/home.php'); //stock
                 }
                 elseif(isset($_GET['page']) && $_GET['page'] == 'book')
                 {
-                    include('book/index.php'); //book
+                    include('shopping_cart/home.php'); //book
                 }
                 elseif(isset($_GET['page']) && $_GET['page'] == 'bank')
                 {
-                    include('bank/index.php'); //bank
+                    include('shopping_cart/home.php'); //bank
                 }
                 elseif(isset($_GET['page']) && $_GET['page'] == 'category')
                 {

@@ -12,41 +12,41 @@
 </head>
 <body>
      <div id="shopping-cart">
-         <div class="txt-heading">shopping-cart</div>
-         <a href="index.php?action=empty">Empty Cart</a>
+         <div class="txt-heading">shopping cart</div>
+         <a href="index.php?action=empty" id="btnEmpty">Empty Cart</a>
 
          <table class= "tbl-cart" cellpadding="10" cellspacing="1">
             <tbody>
                 <tr>
                     <th style="text-align: left;">Name</th>
-                    <!-- <th style="text-align: left;">Code</th> -->
-                    <th style="text-align: right;" width="5%">Quantily</th>
-                    <!-- <th style="text-align: right;" width="10%">Unit Price</th> -->
-                    <th style="text-align: right;" width="10%">Price</th>
+                    <th style="text-align: left;">Code</th>
+                    <th style="text-align: left;" width="20%">Quantily</th>
+                    <th style="text-align: left;" width="15%" >Unit Price</th>
+                    <th style="text-align: left;" width="10%">Price</th>
                     <th style="text-align: center;" width="5%">Remove</th>
                 </tr>
                 <tr>
-                    <!-- <td> <img src="image/thumbnail.jpg" class="cart-item-image"  alt=""></td> -->
-                    <td>มาแก้นำ รอโค๊ต</td>
-                    <td style="text-align: right;">1</td>    
-                    <td style="text-align: right;">$199</td>
-                    <td style="text-align: right;">$199</td>
-                    <td style="text-align: center;"><a href="#" class="btnRemoveAction"><img src="image/icon-Remove.jpg" alt="Remove Item"></a></td>                
+                    <td> <img src="image/thumbnail.jpg" class="cart-item-image"  alt="" ></td>
+                    <td>นารูโตะ ตอนที่1</td>
+                    <td style="text-align: left;">1</td>    
+                    <td style="text-align: left;">$199</td>
+                    <td style="text-align: left;">$199</td>
+                    <td style="text-align: center;"><a href="#" class="btnRemoveAction"><img src="image/delete-vector-icon.jpg" class="btnRemoveAction" alt="Remove Item" id="preview" width="155" height="250"></a></td>                
                 </tr>
                 <tr>
-                    <td colspan="2" align="right">Total:</td>
-                    <td align="right">1</td>
-                    <td align="right" colspan="2">$199.00</td>
+                    <td colspan="2" align="center">Total:</td>
+                    <td align="left">1</td>
+                    <td align="left" colspan="2">$199.00</td>
                     <td></td>
                 </tr>
             </tbody>
          </table>
      </div>
-    <!-- <div id="product-grid">
+    <div id="product-grid">
         <div class="product-item">
             <form action="index.php?action=add&code">
                 <div class="product-image">
-                    <img src="image/fairy tail.jpg" alt="images">
+                    <img src="image/fairy tail.jpg" alt="images" id="preview" width="250" height="155">
                 </div>
                 <div class="product-title-footer">
                     <div class="product-title">fairy tail</div>
@@ -61,7 +61,8 @@
                 </div>
             </form>
         </div>
-    </div> -->
+    </div>
+
 
 </body>
 </html>

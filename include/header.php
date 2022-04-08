@@ -190,7 +190,7 @@
                                     <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                                 </svg>
                             </span>
-                            <span class="nav-link-text">Stock</span>
+                            <span class="nav-link-text">Anime</span>
                         </a>
                         <!--//nav-link-->
                     </li>
@@ -203,7 +203,7 @@
                                     <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                                 </svg>
                             </span>
-                            <span class="nav-link-text">Books</span>
+                            <span class="nav-link-text">Fantasy novel</span>
                         </a>
                         <!--//nav-link-->
                     </li>
@@ -218,7 +218,7 @@
                                     <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                                 </svg>
                             </span>
-                            <span class="nav-link-text">Bank</span>
+                            <span class="nav-link-text">Drama</span>
                         </a>
                         <!--//nav-link-->
                     </li>
@@ -231,7 +231,7 @@
                                     <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                                 </svg>
                             </span>
-                            <span class="nav-link-text">Category</span>
+                            <span class="nav-link-text">Yaoi</span>
                         </a>
                         <!--//nav-link-->
                     </li>
