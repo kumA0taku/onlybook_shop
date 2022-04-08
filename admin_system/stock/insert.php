@@ -8,19 +8,24 @@ if (isset($_POST) && !empty($_POST)) {
 
     $sql = "INSERT INTO stock (stock_id,book_id,qty) VALUES('$stock_id', '$book_id',$Quality)";
     if (mysqli_query($conn, $sql)) {
-        echo "Success!!";
+        //echo "Success!!";
+    $alert ='<script type="text/javascript>">';
+    $alert .= 'alert("เพิ่มข้อมูลสำเร็จ");';
+    $alert .= 'window.location.href ="?page=stock&function=add";';
+    $alert .= '</script>';
+    echo $alert;
     } else {
         echo "Fail: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
-$sql = "SELECT book_id FROM book";
-$bookID = mysqli_query($conn, $sql);
+$sq = "SELECT book_id FROM book";
+$bookID = mysqli_query($conn, $sq);
 ?>
 <?php include('include/script.php') ?>
 <div class="row justify-content-between">
     <div class="col-auto">
-    <h1 class="app-page-title">Stock</h1>
+    <h1 class="app-page-title mb-0">Stock</h1>
     </div>
     <div class="col-auto">
     <a href="?page=<?=$_GET['page']?>" class="btn btn-success float-left">back</a>
@@ -28,7 +33,6 @@ $bookID = mysqli_query($conn, $sql);
 </div>
 
 <hr class="mb-4">
-< class="row g-4 setting-section">
     <div class="col-12 col-md-12">
         <div class="app-card app-card-setting shadow-sm p-4">
             <div class="app-card-body">
@@ -68,7 +72,7 @@ $bookID = mysqli_query($conn, $sql);
                                             </div>
                                             <div class="modal-footer">
                                             <button type="submit" class="btn app-btn-primary">Add</button>
-                                            <!button type="submit" class="btn app-btn-danger">close</!button>
+                                            <!button type="submit" class="btn app-btn-danger"></!button>
                                             </div>
                                         </form>
                                     </div>

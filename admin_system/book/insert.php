@@ -27,21 +27,46 @@ if (isset($_POST) && !empty($_POST))
                 if(move_uploaded_file($filetmp,$target.$filename)){
                     $filename = $filename;
                 }else{
-                    echo "เพิ่มไฟล์เข้า folder ไม่สำเร็จ";
+                    
+                    $alert ='<script type="text/javascript>">';
+                    $alert .= 'alert("เพิ่มไฟล์เข้า folder ไม่สำเร็จ");';
+                    $alert .= 'window.location.href ="?page=book&function=add";';
+                    $alert .= '</script>';
+                    echo $alert;
+                    exit();
                 }
             }else{
                 $newfilename = time().$filename;if(move_uploaded_file($filetmp,$target.$newfilename)){
                     $filename = $newfilename;
                 }else{
-                    echo "เพิ่มไฟล์เข้า folder ไม่สำเร็จ";
+                    
+                    $alert ='<script type="text/javascript>">';
+                    $alert .= 'alert("เพิ่มไฟล์เข้า folder ไม่สำเร็จ");';
+                    $alert .= 'window.location.href ="?page=book&function=add";';
+                    $alert .= '</script>';
+                    echo $alert;
+                    exit();
                 }
             }
 
         }else{
-            echo "ประเภทไฟล์ไม่ถูกต้อง";
+            
+            $alert ='<script type="text/javascript>">';
+            $alert .= 'alert("ประเภทไฟล์ไม่ถูกต้อง");';
+            $alert .= 'window.location.href ="?page=book&function=add";';
+            //$alert .= 'return false;';
+            $alert .= '</script>';
+            echo $alert;
+            exit();
         }
     }else{
-        $filename ="ค้นไม่พบ";
+        
+        $alert ='<script type="text/javascript>">';
+        $alert .= 'alert("ค้นไม่พบ");';
+        $alert .= 'window.location.href ="?page=book&function=add";';
+        $alert .= '</script>';
+        echo $alert;
+        exit();
     }
     echo $filename;
     exit();
@@ -51,7 +76,12 @@ if (isset($_POST) && !empty($_POST))
     
     if (mysqli_query($conn, $sql)) 
     {
-    echo "เพิ่มข้อมูลสำเร็จ";
+    //echo "เพิ่มข้อมูลสำเร็จ";
+    $alert ='<script type="text/javascript>">';
+    $alert .= 'alert("เพิ่มข้อมูลสำเร็จ");';
+    $alert .= 'window.location.href ="?page=book";';
+    $alert .= '</script>';
+    echo $alert;
     } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
