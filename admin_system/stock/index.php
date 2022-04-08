@@ -41,7 +41,10 @@ $rs = mysqli_query($conn, $sql);
                     </tbody>
                 </table>
             </div>
+            <!--//app-card-body-->
+
         </div>
+        <!--//app-card-->
     </div>
 </div>
 <script type="text/javascript">
