@@ -17,7 +17,7 @@
                                 <div class="app-card app-card-settings shadow-sm p-4">
                                     <div class="app-card-body">
                                         <?php
-                                        if(isset($_POST) && empty($_POST)){
+                                        if(isset($_POST) && !empty($_POST)){
                                             
                                         // print_r($_POST);
                                             $stock_id=$_POST['stock_id'];

@@ -19,10 +19,20 @@
                     {
                         include('stock/insert.php');
                     }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'update')
+                    {
+                        include('stock/edit.php');
+                    }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'delete')
+                    {
+                        include('stock/delete.php');
+                    }
                     else{
                         include('stock/index.php'); 
                     }
-                } elseif (isset($_GET['page']) && $_GET['page'] == 'book') {
+                    
+                    }
+                    elseif (isset($_GET['page']) && $_GET['page'] == 'book') {
                     if(isset($_GET['function']) && $_GET['function'] == 'add')
                     {
                         include('book/insert.php');

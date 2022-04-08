@@ -12,7 +12,7 @@ $rs = mysqli_query($conn, $sql);
             <div class="app-card-body">
                 <div class="row g-3 mb-4 align-items-center justify-content-between">
                     <div class="col-auto">
-                        <a href="?page=<?=$_GET['page']?>&function=add" class="btn btn-success ">
+                        <a href="?page=<?=$_GET['page']?>&function=add_stock" class="btn btn-success ">
                             Add Stock
                         </a>
                     </div>

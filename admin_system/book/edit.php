@@ -1,8 +1,7 @@
 
-<!div class="app-wrapper">
-        <!div class="app-content pt-3 p-md-3 p-lg-4">
-        <!div class="container-xl">
-        <h1 class="app-page-title" >เพิ่มข้อมูลหนังสือ</h1>
+<?php include('../connect_db.php') ?>
+<?php include('include/script.php') ?>
+        <h1 class="app-page-title" >Edit Book</h1>
         <hr class="mb-8" >
                 <div class="row g-4 settings-section">
 	                
