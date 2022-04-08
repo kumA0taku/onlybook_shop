@@ -38,7 +38,7 @@ $bookID = mysqli_query($conn, $sql);
                                         // print_r($_POST);
                                         ?>
                                         <form action="" method="post">
-                                            <div class="mb-3">
+                                             <div class="mb-3">
                                                 <label class="form-label">Stock ID</label>
                                                 <input type="text" class="form-control" name="stock_id" value="<?= (isset($_POST['stock_id'])
                                                                                                                     && !empty($_POST['stock_id']) ? $_POST['stock_id'] : '') ?> " autocomplete="off">
