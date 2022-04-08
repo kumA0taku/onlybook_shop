@@ -1,58 +1,43 @@
-<?php
-
-    session_start();
-    require_once('dbcontrller.php');
-    $db_handle = new DBController();
-
-?>
-
-<h1 class="app-page-title">OnlyBook Shop</h1>
-<hr class="mb-4">
-<div class="row g-4 setting-section">
-    <div class = "col-12 col-md-12">
-        <div class="app-card app-card-setting shadow-sm p-4">
-            <div class="app-card-body">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="product-grid">
-        <div class="txt-heading">Product</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="minimal-table.css" rel="stylesheet" type="text/css">
+    <title>Onlybook Shop</title>
+</head>
 
     <?php
-
-    $product_array = $db_handle->runQuery("SELECT * FROM tbl_product order BY id ASC");
-        if(!empty($product_array)){
-            foreach($product_array as $key => $value){
-
-            
-    
-    
+    require("connect_db.php");
+    $sql = " SELECT * FROM book 
+    JOIN category ON book.category_id = category.category_id "; //query DB
+    $rs = mysqli_query($conn, $sql);
     ?>
 
-        <div class="product-item">
-            <form action="index.php?action=add&code">
-                <div class="product-image">
-                    <img src="img/ <?php echo $product_array[$key]["image"]?>" alt="images" id="preview" width="250" height="155">
-                </div>
-                <div class="product-title-footer">
-                    <div class="product-title"><?php echo $product_array[$key]["name"]?></div>
-                    <div class="product-price"><?php echo "$ " . $product_array[$key]["price"]?></div>
-                    <div class="cart-action">
-                        <input type="text" class="product-quantily" name="quantily" value="1" size="2">
-                        <input type="submit" value="Add to cart" class="btnAddAction">
+<body>
+    
+<table border="2" >
+<h1 style="text-align: center; font-size:300%; text-shadow: pink 5px 5px;">Onlybook Shop</h1>
+<h2 style="background-color: DodgerBlue ; text-align: left; font-size:200%; text-shadow: pink 3px 3px;">Home</h2>
+<h4 style="background-color: LightGray ; text-align: center; font-size:100%;">Comedy comics</h4>
 
-                    </div>
+<div class="button" align="end" >
+<button style="font-size:250%; border-radius: 10px; background-color: blue;" onclick="document.location='/onlybook_shop/shopping_cart/cart.php'">Cart</button>
+</div>
 
+</table><br>
 
-                </div>
-            </form>
-        </div>
-        <?php
-        
-            }
-        }
-        
-        
-        ?>
-    </div>
+<table border="1" >
+
+<?php while($row= mysqli_fetch_assoc($rs)){
+    print("<tr><td><img src= 'img/".$row["book_img"]." 'height= '200' ' width = '250'></td></tr>");
+    print("<tr><td>".$row["book_name"]."</td></tr>");
+    print("<tr><td><a href= cart.php? ID=".$row["book_id"]."> Add to cart </a></td></tr>");
+    
+} ?>
+</table>
+<br>
+ ขอบคุณที่มาใช้บริการเว็ปเรานะคะ
+</body>
+</html>
