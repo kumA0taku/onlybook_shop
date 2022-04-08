@@ -1,6 +1,6 @@
 <?php include('../connect_db.php') ?>
 <?php include('include/script.php') ?>
-<h1 class="app-page-title">Book</h1>
+<h1 class="app-page-title">Add Book</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">
     <div class="col-12 col-md-12">

@@ -1,21 +1,21 @@
-
 <?php include('../connect_db.php') ?>
 <?php include('include/script.php') ?>
-        <h1 class="app-page-title" >Edit Book</h1>
-        <hr class="mb-8" >
-                <div class="row g-4 settings-section">
-	                
-	                <div class="col-12 col-md-12" >
-		                <div class="app-card app-card-settings shadow-sm p-5" >
-						    
-						    <div class="app-card-body" >
+<h1 class="app-page-title">Add Book</h1>
+<hr class="mb-4">
+<div class="row g-4 setting-section">
+    <div class="col-12 col-md-12">
+        <div class="app-card app-card-setting shadow-sm p-4">
+            <div class="app-card-body">
+
+                <div class="app-content pt-3 p-md-3 p-lg-4">
+                    <div class="container-xl">
+                        <div class="app-card-body" >
                                 <?php 
                                 if(isset($_GET['book_id']) && !empty($_GET['book_id'])){
                                     $id = $_GET["book_id"];
                                     $sql = "SELECT * FROM book WHERE book_id='$id'";
-                                    $query = mysqli_query($connect,$sql);
-                                    $result = mysqli_fetch_assoc($query);
-                                }
+                                    $query = mysqli_query($conn,$sql);
+                                    $result = mysqli_fetch_assoc($query);}
                                     //print_r($_POST);
                                     if(isset($_POST) && !empty($_POST))
                                     {
@@ -57,26 +57,24 @@
                                                 echo "ประเภทไฟล์ไม่ถูกต้อง";
                                             }
                                         }else{
-                                            $filename =$oldimage;
+                                            $filename ="ไม่ได้เลือกรูปภาพ";
                                         }
-                                        //echo $filename;
+                                        echo $filename;
                                         exit();
                                         
                                         $sql = "UPDATE book SET book_id='$id',category='$category',book_name='$name',price='$price',description='$description', book_img='$image' WHERE id='' " ;
-                                        
 
-                                        if (mysqli_query($connect, $sql)) {
-                                        echo "เพิ่มข้อมูลสำเร็จ";
+                                        if (mysqli_query($conn, $sql)) {
+                                        echo $oldimage;
                                         } else {
-                                        echo "Error: " . $sql . "<br>" . mysqli_error($connect);
+                                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                                             }
 
-                                            mysqli_close($connect);
+                                            mysqli_close($conn);
                                     }
                                 ?>
-                                <script type="text/javascript">
-
-                                </script>
+                                
+							    
                                 <div class="row justify-content-between">
                                     <div class="col-auto">
                                          <h1 class="app-page-title mb-0">แก้ไขข้อมูล</h1>
@@ -91,7 +89,8 @@
                                         <div class="app-card app-card-setting shadow-sm p-4">
                                             <div class="mb-3">
                                             <form action="" method="post" enctype="multipart/form-data">
-                                <div class="mb-3">
+                                                <div class="mb-3">
+                                                    <form>
 									    <label  class="form-label">Image</label>
                                         <div class="mb-23">
                                         <img id="preview" src="upload/admin<?=$result['book_img']?>" class="rounded" width="150" height="150">
@@ -129,23 +128,20 @@
                                     
 									<button type="submit" class="btn app-btn-primary" >Save </button>
 							    </form>
-                                            </div>
+                                                </div><!--//app-card-body-->
                                         </div>
+                                        <!--//container-fluid-->
                                     </div>
+                                    <!--//app-content-->
                                 </div>
-							    
-						    </div><!--//app-card-body-->
-						    
-						</div><!--//app-card-->
-	                </div>
-                </div><!--//row-->
-                
-            <!--//container-fluid-->
-        </!div>
-        <!--//app-content-->
-        <!--<!?php include('include/footer.php') ?>-->
-        <!--//app-footer -->
-    </!div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+        </div>
+    </div>
+</div>
     <script type="text/javascript">
             function readURL(input){
                 if(input.files && input.files[0]){
@@ -160,4 +156,3 @@
                 readURL(this);
             });
     </script>
-
