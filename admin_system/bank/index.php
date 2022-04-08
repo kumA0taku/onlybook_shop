@@ -32,7 +32,7 @@ $rs = mysqli_query($conn, $sql);
                                 <td><?= $data['bank_name'] ?></td>
                                 <td>
                                     <a href="?page=<?=$_GET['page']?>&function=update&id=<?=$data['bank_id']?>" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="?page=<?=$_GET['page']?>&function=delete&id=<?=$data['bank_id']?>" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="?page=<?=$_GET['page']?>&function=delete&id=<?=$data['bank_id']?>" onclick="return confirm('Are you sure??')" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

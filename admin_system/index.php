@@ -35,7 +35,7 @@
                     }
                     elseif(isset($_GET['function']) && $_GET['function'] == 'delete')
                     {
-                        include('bank/delete.php');
+                        include('bank/submit_delete.php');
                     }
                     else{
                         include('bank/index.php'); 

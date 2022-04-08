@@ -53,7 +53,7 @@
                                         if ($_POST) {
                                             $bank_name = $_POST['bank_name'];
                                             $bank_no = $_POST['bank_no'];
-                                            $id = $_POST['id'];
+                                            $id = $_POST['id']; //<<< id mean id from Edit Button 
                                             $sql = "UPDATE bank SET bank_name = '$bank_name', bank_no = '$bank_no' WHERE bank_id = '$id'";
                                             if (mysqli_query($conn, $sql)) {
                                                 echo "Success!!";
