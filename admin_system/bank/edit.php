@@ -18,18 +18,22 @@
                                     <div class="app-card-body">
                                         <?php
                                         if(isset($_POST) && !empty($_POST)){
-                                            
-                                        // print_r($_POST);
                                             $bank_name=$_POST['bank_name'];
                                             $bank_no=$_POST['bank_no'];
+                                            
+                                       
+                                            
+                                        // print_r($_POST);
+                                            // $bank_name=$_POST['bank_name'];
+                                            // $bank_no=$_POST['bank_no'];
 
-                                            $sql = "INSERT INTO bank (bank_no,bank_name) VALUES('$bank_no', '$bank_name')";
-                                            if(mysqli_query($conn, $sql)){
-                                                echo "Success!!";
-                                            }else{
-                                                echo "Fail: ".$sql."<br>". mysqli_error($conn);
-                                            }
-                                            mysqli_close($conn);
+                                            // $sql = "INSERT INTO bank (bank_no,bank_name) VALUES('$bank_no', '$bank_name')";
+                                            // if(mysqli_query($conn, $sql)){
+                                            //     echo "Success!!";
+                                            // }else{
+                                            //     echo "Fail: ".$sql."<br>". mysqli_error($conn);
+                                            // }
+                                            // mysqli_close($conn);
                                         } 
                                         if(isset($_GET['bank_id']) && !empty($_GET['bank_id'])){
                                             $bank_id = $_GET['bank_id'];
@@ -41,13 +45,13 @@
                                         <form action="" method="post">
                                             <div class="mb-3">
                                                 <label class="form-label">Bank Name</label>
-                                                <input type="text" class="form-control" name="bank_name" value="<?=$result['bank_name']?>" autocomplete="off" require>
+                                                <input type="text" class="form-control" name="bank_name" value="<?=$result['bank_name']?>" >
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Bank No</label>
-                                                <input type="text" class="form-control" name="bank_no">
+                                                <input type="text" class="form-control" name="bank_no" value="<?=$result['bank_no']?>" autocomplete="off" require>
                                             </div>
-                                            <button type="submit" class="btn app-btn-primary">Add</button>
+                                            <button type="submit" class="btn btn-warning">Edit</button>
                                         </form>
                                     </div>
                                     <!--//app-card-body-->
