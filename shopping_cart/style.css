@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+    color: #211a21;
+    font: size 0.5cm;;
+}
+
+  #Shopping-cart {
+    margin: 10px;
+}
+
+#product-grid{
+    margin: 50px;
+}
+
+#shopping-cart table{
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+.txt-heading {
+    color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: auto;
+}
+#btnEmpty {
+    background-color: #fff;
+    border: #d00000 1px solid;
+    padding: 5px 10px;
+    color: #d00000;
+    float: right;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 10px 0px;
+}

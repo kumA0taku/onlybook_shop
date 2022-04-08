@@ -10,9 +10,8 @@
         $password = $_POST['password'];
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
-        $email = $_POST['email'];
 
-        $user_check = "SELECT * FROM user4 WHERE username = '$username' LIMIT 1";
+        $user_check = "SELECT * FROM user WHERE username = '$username' LIMIT 1";
         $result = mysqli_query($conn, $user_check);
         $user = mysqli_fetch_assoc($result);
 
@@ -21,8 +20,8 @@
         } else {
             $passwordenc = md5($password);
 
-            $query = "INSERT INTO user4 (username, password, firstname, lastname, e-mail, userlevel)
-                        VALUE ('$username', '$passwordenc', '$firstname', '$lastname', '$email', 'm')";
+            $query = "INSERT INTO user (username, password, firstname, lastname, userlevel)
+                        VALUE ('$username', '$passwordenc', '$firstname', '$lastname', 'm')";
             $result = mysqli_query($conn, $query);
 
             if ($result) {

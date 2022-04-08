@@ -10,7 +10,7 @@
         $password = $_POST['password'];
         $passwordenc = md5($password);
 
-        $query = "SELECT * FROM user4 WHERE username = '$username' AND password = '$passwordenc'";
+        $query = "SELECT * FROM user WHERE username = '$username' AND password = '$passwordenc'";
 
         $result = mysqli_query($conn, $query);
 
@@ -26,7 +26,7 @@
             }
 
             if ($_SESSION['userlevel'] == 'm') {
-                header("Location: index.php");
+                header("Location: /onlybook_shop/home.php");
             }
         } else {
             echo "<script>alert('User หรือ Password ไม่ถูกต้อง);</script>";
