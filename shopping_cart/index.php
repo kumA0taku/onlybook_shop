@@ -19,14 +19,14 @@
             <tbody>
                 <tr>
                     <th style="text-align: left;">Name</th>
-                    <th style="text-align: left;">Code</th>
+                    <!-- <th style="text-align: left;">Code</th> -->
                     <th style="text-align: right;" width="5%">Quantily</th>
                     <th style="text-align: right;" width="10%">Unit Price</th>
                     <th style="text-align: right;" width="10%">Price</th>
                     <th style="text-align: center;" width="5%">Remove</th>
                 </tr>
                 <tr>
-                    <td> <img src="image/thumbnail.jpg" class="cart-item-image"  alt=""></td>
+                    <!-- <td> <img src="image/thumbnail.jpg" class="cart-item-image"  alt=""></td> -->
                     <td>มาแก้นำ รอโค๊ต</td>
                     <td style="text-align: right;">1</td>    
                     <td style="text-align: right;">$199</td>
