@@ -17,12 +17,19 @@
                                 <div class="app-card app-card-settings shadow-sm p-4">
                                     <div class="app-card-body">
                                         <?php
+                                        
+                                        if(isset($_GET['bank_id']) && !empty($_GET['bank_id'])){
+                                            $bank_id = $_GET['bank_id'];
+                                            
+                                            $bank_name=$_GET['bank_name'];
+                                            $bank_no=$_GET['bank_no'];
+                                            $sql = "SELECT * FROM bank WHERE bank_id = '$bank_id'";
+                                            $query = mysqli_query($conn, $sql);
+                                            $result = mysqli_fetch_assoc($query);
+                                        }
                                         if(isset($_POST) && !empty($_POST)){
                                             $bank_name=$_POST['bank_name'];
                                             $bank_no=$_POST['bank_no'];
-                                            
-                                       
-                                            
                                         // print_r($_POST);
                                             // $bank_name=$_POST['bank_name'];
                                             // $bank_no=$_POST['bank_no'];
@@ -35,21 +42,16 @@
                                             // }
                                             // mysqli_close($conn);
                                         } 
-                                        if(isset($_GET['bank_id']) && !empty($_GET['bank_id'])){
-                                            $bank_id = $_GET['bank_id'];
-                                            $sql = "SELECT * FROM bank WHERE bank_id = '$bank_id'";
-                                            $query = mysqli_query($conn, $sql);
-                                            $result = mysqli_fetch_assoc($query);
-                                        }
+                                        $sql = " UPDATE bank SET bank_name = '$bank_name', bank_no = '$bank_no' WHERE bank_id = '$bank_id'";
                                         ?>
                                         <form action="" method="post">
                                             <div class="mb-3">
                                                 <label class="form-label">Bank Name</label>
-                                                <input type="text" class="form-control" name="bank_name" value="<?=$result['bank_name']?>" >
+                                                <input type="text" class="form-control" name="bank_name">
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Bank No</label>
-                                                <input type="text" class="form-control" name="bank_no" value="<?=$result['bank_no']?>" autocomplete="off" require>
+                                                <input type="text" class="form-control" name="bank_no">
                                             </div>
                                             <button type="submit" class="btn btn-warning">Edit</button>
                                         </form>
