@@ -35,13 +35,27 @@
                     }
                     elseif(isset($_GET['function']) && $_GET['function'] == 'delete')
                     {
-                        include('bank/delete.php');
+                        include('bank/submit_delete.php');
                     }
                     else{
                         include('bank/index.php'); 
                     }
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'category') {
-                    include('category/index.php'); //category
+                    if(isset($_GET['function']) && $_GET['function'] == 'add')
+                    {
+                        include('category/insert.php');
+                    }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'update')
+                    {
+                        include('category/edit.php');
+                    }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'delete')
+                    {
+                        include('category/submit_delete.php');
+                    }
+                    else{
+                        include('category/index.php'); //category
+                    }
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'orders_status') {
                     include('order/index.php'); //order
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'test_page') {

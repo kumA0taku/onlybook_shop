@@ -1,3 +1,4 @@
+
 <?php include('../connect_db.php') ?>
 <?php include('include/script.php') ?>
 <h1 class="app-page-title">Bank</h1>
@@ -16,7 +17,7 @@
                                 <div class="app-card app-card-settings shadow-sm p-4">
                                     <div class="app-card-body">
                                         <?php
-
+                                        
                                         // if(isset($_GET['bank_id']) && !empty($_GET['bank_id'])){
                                         //     $bank_id = $_GET['bank_id'];
                                         //     // $bank_name=$_GET['bank_name'];
@@ -25,7 +26,7 @@
                                         //     $query = mysqli_query($conn, $sql);
                                         //     $result = mysqli_fetch_assoc($query);
 
-
+                                            
                                         // $sql = "UPDATE bank SET bank_name = '$bank_name', bank_no = '$bank_no' WHERE bank_id = '$bank_id'";
                                         // if(mysqli_query($conn, $sql)){
                                         //     echo "Success!!";
@@ -50,25 +51,9 @@
                                         //     // }
                                         //     // mysqli_close($conn);
                                         // } 
-                                        if ($_POST) {
-                                            $bank_name = $_POST['bank_name'];
-                                            $bank_no = $_POST['bank_no'];
-                                            $id = $_POST['id']; //<<< id mean id from Edit Button 
-                                            $sql = "UPDATE bank SET bank_name = '$bank_name', bank_no = '$bank_no' WHERE bank_id = '$id'";
-                                            if (mysqli_query($conn, $sql)) {
-                                                echo "Success!!";
-                                                // $url = "?page=bank";
-                                                // header('Location: ' . $url);
-                                            } else {
-                                                echo "Fail: " . $sql . "<br>" . mysqli_error($conn);
-                                            }
-                                            // mysqli_close($conn);
-                                            $conn->close();
-                                        }
                                         ?>
-                                        <form action="" method="post">
+                                        <form action="submit_edit.php" method="post">
                                             <div class="mb-3">
-                                                <input type="hidden" class="form-control" name="id" value="<?php echo $_GET['id'] ?>">
                                                 <label class="form-label">Bank Name</label>
                                                 <input type="text" class="form-control" name="bank_name">
                                             </div>
