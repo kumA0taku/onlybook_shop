@@ -1,3 +1,4 @@
+
 <h1 class="app-page-title">Stock</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">

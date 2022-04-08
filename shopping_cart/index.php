@@ -42,7 +42,7 @@
             </tbody>
          </table>
      </div>
-    <div id="product-grid">
+    <!-- <div id="product-grid">
         <div class="product-item">
             <form action="index.php?action=add&code">
                 <div class="product-image">
@@ -61,7 +61,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 
 </body>
 </html>
