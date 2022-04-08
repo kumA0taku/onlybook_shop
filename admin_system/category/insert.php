@@ -1,7 +1,7 @@
 
 <?php include('../connect_db.php') ?>
 <?php include('include/script.php') ?>
-<h1 class="app-page-title">Bank</h1>
+<h1 class="app-page-title">Category</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">
     <div class="col-12 col-md-12">
@@ -10,7 +10,7 @@
 
                 <div class="app-content pt-3 p-md-3 p-lg-4">
                     <div class="container-xl">
-                        <h1 class="app-page-title" style="font-size: 120%;">Add Bank</h1>
+                        <h1 class="app-page-title" style="font-size: 120%;">Add Category</h1>
                         <hr class="mb-4">
                         <div class="row g-4 settings-section">
                             <div class="col-12 col-md-8">
@@ -20,10 +20,11 @@
                                         if(isset($_POST) && !empty($_POST)){
                                             
                                         // print_r($_POST);
-                                            $bank_name=$_POST['bank_name'];
-                                            $bank_no=$_POST['bank_no'];
+                                            $category_id=$_POST['category_id'];
+                                            $category_name=$_POST['category_name'];
+                                            $cate_descrip=$_POST['cate_descrip'];
 
-                                            $sql = "INSERT INTO bank (bank_no,bank_name) VALUES('$bank_no', '$bank_name')";
+                                            $sql = "INSERT INTO category (category_id,category_name,cate_descrip) VALUES('$category_id', '$category_name', '$cate_descrip')";
                                             if(mysqli_query($conn, $sql)){
                                                 echo "Success!!";
                                             }else{
@@ -35,12 +36,16 @@
                                         ?>
                                         <form action="" method="post">
                                             <div class="mb-3">
-                                                <label class="form-label">Bank Name</label>
-                                                <input type="text" class="form-control" name="bank_name">
+                                                <label class="form-label">Category ID</label>
+                                                <input type="text" class="form-control" name="category_id">
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label">Bank No</label>
-                                                <input type="text" class="form-control" name="bank_no">
+                                                <label class="form-label">Category Name</label>
+                                                <input type="text" class="form-control" name="category_name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Category Description</label>
+                                                <input type="text" class="form-control" name="cate_descrip">
                                             </div>
                                             <button type="submit" class="btn app-btn-primary">Add</button>
                                         </form>
