@@ -23,7 +23,21 @@
                         include('stock/index.php'); 
                     }
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'book') {
-                    include('book/index.php'); //book
+                    if(isset($_GET['function']) && $_GET['function'] == 'add')
+                    {
+                        include('book/insert.php');
+                    }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'update')
+                    {
+                        include('book/edit.php');
+                    }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'delete')
+                    {
+                        include('book/delete.php');
+                    }
+                    else{
+                        include('book/index.php'); 
+                    }
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'bank') { //bank
                     if(isset($_GET['function']) && $_GET['function'] == 'add')
                     {

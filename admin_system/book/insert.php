@@ -1,6 +1,5 @@
-
-<?php include('../admin/connect_db.php') ?>
-<?php include('../script.php') ?>
+<?php include('../connect_db.php') ?>
+<?php include('include/script.php') ?>
 <h1 class="app-page-title">Book</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">
@@ -75,7 +74,7 @@
                                         <div class="mb-23">
                                         <img id="preview" width="150" height="150">
                                         </div>
-                                        <button onclick="return triggerFile();" class="btn vtb-success">เลือกรูปภาพ</button>
+                                        <!button onclick="return triggerFile();" class="btn vtb-success">เลือกรูปภาพ</!button>
 									    <input type="file" class="form-control" name="book_img" id="image">
 									</div>
                                     <div class="mb-3">
