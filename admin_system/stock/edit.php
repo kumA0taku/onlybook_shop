@@ -1,4 +1,11 @@
-<?php include('../connect_db.php') ;
+<?php include('../connect_db.php');
+if(isset($_GET['stock_id']) && !empty($_get['stock_id'])){
+    $id = $_GET['stock_id'];
+    $sql = "SELECT * FROM stock WHERE stock_'$id'";
+    $query = mysqli_query($conn,$sql);
+    $result = mysqli_fetch_assoc($query);
+}
+
 $sql = "SELECT book_id FROM book";
 $bookID = mysqli_query($conn, $sql);
 

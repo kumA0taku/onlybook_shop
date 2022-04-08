@@ -1,12 +1,34 @@
 <?php include('../connect_db.php');
+if (isset($_POST) && !empty($_POST)) {
 
+    // print_r($_POST);
+    $stock_id = $_POST['stock_id'];
+    $book_id = $_POST['book_id'];
+    $Quality = $_POST['qty'];
+
+    $sql = "INSERT INTO stock (stock_id,book_id,qty) VALUES('$stock_id', '$book_id',$Quality)";
+    if (mysqli_query($conn, $sql)) {
+        echo "Success!!";
+    } else {
+        echo "Fail: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+}
 $sql = "SELECT book_id FROM book";
 $bookID = mysqli_query($conn, $sql);
 ?>
 <?php include('include/script.php') ?>
-<h1 class="app-page-title">Stock</h1>
+<div class="row justify-content-between">
+    <div class="col-auto">
+    <h1 class="app-page-title">Stock</h1>
+    </div>
+    <div class="col-auto">
+    <a href="?page=<?=$_GET['page']?>" class="btn btn-success float-left">back</a>
+    </div>
+</div>
+
 <hr class="mb-4">
-<div class="row g-4 setting-section">
+< class="row g-4 setting-section">
     <div class="col-12 col-md-12">
         <div class="app-card app-card-setting shadow-sm p-4">
             <div class="app-card-body">
@@ -19,24 +41,7 @@ $bookID = mysqli_query($conn, $sql);
                             <div class="col-12 col-md-8">
                                 <div class="app-card app-card-settings shadow-sm p-4">
                                     <div class="app-card-body">
-                                        <?php
-                                        if (isset($_POST) && !empty($_POST)) {
-
-                                            // print_r($_POST);
-                                            $stock_id = $_POST['stock_id'];
-                                            $book_id = $_POST['book_id'];
-                                            $Quality = $_POST['qty'];
-
-                                            $sql = "INSERT INTO stock (stock_id,book_id,qty) VALUES('$stock_id', '$book_id',$Quality)";
-                                            if (mysqli_query($conn, $sql)) {
-                                                echo "Success!!";
-                                            } else {
-                                                echo "Fail: " . $sql . "<br>" . mysqli_error($conn);
-                                            }
-                                            mysqli_close($conn);
-                                        }
-                                        // print_r($_POST);
-                                        ?>
+                                        
                                         <form action="" method="post">
                                             <div class="mb-3">
                                                 <label class="form-label">Stock ID</label>
@@ -61,7 +66,10 @@ $bookID = mysqli_query($conn, $sql);
                                                     ?>
                                                 </select><br>
                                             </div>
+                                            <div class="modal-footer">
                                             <button type="submit" class="btn app-btn-primary">Add</button>
+                                            <!button type="submit" class="btn app-btn-danger">close</!button>
+                                            </div>
                                         </form>
                                     </div>
                                     <!--//app-card-body-->
@@ -78,4 +86,8 @@ $bookID = mysqli_query($conn, $sql);
             </div>
         </div>
     </div>
-</div>
+
+                                                                                                    
+                                                                                                    
+
+                                                                                                    

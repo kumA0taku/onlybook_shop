@@ -6,8 +6,15 @@ $rs = mysqli_query($conn, $sql);
 
 ?>
 <?php include('include/script.php') ?>
-<h1 class="app-page-title">Stock</h1>
-<hr class="mb-4">
+<div class="row justify-content-between">
+    <div class="col-auto">
+    <h1 class="app-page-title mb-4">Stock</h1>
+     </div>
+     <div class="col-auto">
+     
+     </div>
+</div >
+
 <div class="row g-4 setting-section">
     <div class="col-12 col-md-12">
         <div class="app-card app-card-setting shadow-sm p-4">
@@ -31,12 +38,12 @@ $rs = mysqli_query($conn, $sql);
                     <tbody>
                         <?php foreach ($rs as $data) : ?>
                             <tr>
-                                <td><?= $data['stock_id'] ?></td>
-                                <td><?= $data['book_id'] ?></td>
-                                <td><?= $data['qty'] ?></td>
+                                <td class="align-middle"><?= $data['stock_id'] ?></td>
+                                <td class="align-middle"><?= $data['book_id'] ?></td>
+                                <td class="align-middle"><?= $data['qty'] ?></td>
                                 <td>
-                                    <a href="?page=<?=$_GET['page']?>&function=update&id=<?=$data['book_id']?>" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="?page=<?=$_GET['page']?>&function=delete&id=<?=$data['book_id']?>" class="btn btn-sm btn-danger">delete</a>
+                                    <a href="?page=<?=$_GET['page']?>&function=update&id=<?=$data['book_id']?>"  class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="?page=<?=$_GET['page']?>&function=delete&id=<?=$data['book_id']?>" onclick="return confirm('ต้องการลบใช่ไม่ : <?=$data['stock_id']?>')" class="btn btn-sm btn-danger">delete</a>
                                     
                                 </td>
                             </tr>
