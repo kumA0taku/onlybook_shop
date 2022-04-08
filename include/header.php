@@ -190,7 +190,7 @@
                                     <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                                 </svg>
                             </span>
-                            <span class="nav-link-text">Anime</span>
+                            <span class="nav-link-text">Home</span>
                         </a>
                         <!--//nav-link-->
                     </li>
@@ -203,7 +203,7 @@
                                     <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                                 </svg>
                             </span>
-                            <span class="nav-link-text">Fantasy novel</span>
+                            <span class="nav-link-text">Manga</span>
                         </a>
                         <!--//nav-link-->
                     </li>

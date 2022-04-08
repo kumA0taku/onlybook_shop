@@ -12,10 +12,11 @@ private $conn;
     }    
 
     function connectDB(){
-    $conn=mysqli_connect($this->host,$this->user,$this->pass,$this->db);
+    $conn=mysqli_connect($this->host, $this->user, $this->pass, $this->db);
     return $conn;
 
     }
+    
     function runQuery($query){
         $result = mysqli_query($this->conn, $query);
 
