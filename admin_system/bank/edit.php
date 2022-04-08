@@ -10,7 +10,7 @@
 
                 <div class="app-content pt-3 p-md-3 p-lg-4">
                     <div class="container-xl">
-                        <h1 class="app-page-title" style="font-size: 120%;">Edit Bank</h1>
+                        <h1 class="app-page-title" style="font-size: 120%;">Ed11111it Bank</h1>
                         <hr class="mb-4">
                         <div class="row g-4 settings-section">
                             <div class="col-12 col-md-8">
