@@ -10,7 +10,7 @@
 
                 <div class="app-content pt-3 p-md-3 p-lg-4">
                     <div class="container-xl">
-                        <h1 class="app-page-title" style="font-size: 120%;">Add Bank</h1>
+                        <h1 class="app-page-title" style="font-size: 120%;">Add Stock</h1>
                         <hr class="mb-4">
                         <div class="row g-4 settings-section">
                             <div class="col-12 col-md-8">
@@ -20,10 +20,11 @@
                                         if(isset($_POST) && !empty($_POST)){
                                             
                                         // print_r($_POST);
-                                            $bank_name=$_POST['bank_name'];
-                                            $bank_no=$_POST['bank_no'];
+                                            $stock_id=$_POST['stock_id'];
+                                            $book_id=$_POST['book_id'];
+                                            $Quality =$_POST['qty'];
 
-                                            $sql = "INSERT INTO bank (bank_no,bank_name) VALUES('$bank_no', '$bank_name')";
+                                            $sql = "INSERT INTO stock (stock_id,book_id,qty) VALUES('$stock_id', '$book_id',$Quality)";
                                             if(mysqli_query($conn, $sql)){
                                                 echo "Success!!";
                                             }else{
@@ -34,13 +35,17 @@
                                         // print_r($_POST);
                                         ?>
                                         <form action="" method="post">
-                                            <div class="mb-3">
-                                                <label class="form-label">Bank Name</label>
-                                                <input type="text" class="form-control" name="bank_name">
+                                        <div class="mb-3">
+                                                <label class="form-label">Stock ID</label>
+                                                <input type="text" class="form-control" name="stock_id">
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label">Bank No</label>
-                                                <input type="text" class="form-control" name="bank_no">
+                                                <label class="form-label">Book ID</label>
+                                                <input type="text" class="form-control" name="book_id">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Quality</label>
+                                                <input type="text" class="form-control" name="qty">
                                             </div>
                                             <button type="submit" class="btn app-btn-primary">Add</button>
                                         </form>

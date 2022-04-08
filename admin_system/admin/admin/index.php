@@ -28,7 +28,7 @@ $query = mysqli_query($conn, $sql);
                         <th scope="col">Price</th>
                         <th scope="col">Description</th>
                         <th scope="col">Image</th>
-                        <th scope="col">Menu</th>
+                        <th scope="col">Operation</th>
                     </tr>
                 </thead>
                 <tbody>
