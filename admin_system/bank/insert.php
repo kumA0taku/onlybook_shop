@@ -17,13 +17,14 @@
                                 <div class="app-card app-card-settings shadow-sm p-4">
                                     <div class="app-card-body">
                                         <?php
-                                        if(isset($_POST) && !empty($_POST)){
+                                        if(isset($_POST) && !empty($_POST))
+                                        {
                                             
                                         // print_r($_POST);
                                             $bank_name=$_POST['bank_name'];
                                             $bank_no=$_POST['bank_no'];
 
-                                            $sql = "INSERT INTO bank (bank_no,bank_name) VALUES('$bank_no', '$bank_name')";
+                                            $sql = "INSERT INTO bank (bank_no,bank_name) VALUES ('$bank_no', '$bank_name')";
                                             if(mysqli_query($conn, $sql)){
                                                 echo "Success!!";
                                             }else{
