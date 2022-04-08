@@ -1,7 +1,5 @@
-
 <?php include('../connect_db.php') ?>
 <?php include('include/script.php') ?>
-
 <h1 class="app-page-title">Stock</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">
@@ -11,53 +9,47 @@
 
                 <div class="app-content pt-3 p-md-3 p-lg-4">
                     <div class="container-xl">
-                        <h1 class="app-page-title" style="font-size: 120%;">Add Stock</h1>
+                        <h1 class="app-page-title" style="font-size: 120%;">Edit Stock</h1>
                         <hr class="mb-4">
                         <div class="row g-4 settings-section">
                             <div class="col-12 col-md-8">
                                 <div class="app-card app-card-settings shadow-sm p-4">
                                     <div class="app-card-body">
                                         <?php
-                                        if(isset($_GET['book_id']) && !empty($_GET['book_id'])){
-                                            $id = $_GET["book_id"];
-                                            $sql = "SELECT * FROM stock WHERE book_id='$id' ";
-                                            $query = mysqli_query($conn,$sql);
-                                            $result = mysqli_fetch_assoc($query);}
-                                        if(isset($_POST) && !empty($_POST)){
-                                            
-                                        // print_r($_POST);
-                                            $stock_id=$_POST['stock_id'];
-                                            $book_id=$_POST['book_id'];
-                                            $Quality =$_POST['qty'];
-
-                                            $sql = "INSERT INTO stock (stock_id,book_id,qty) VALUES('$stock_id', '$book_id',$Quality)";
-                                            if(mysqli_query($conn, $sql)){
+                                        if ($_POST) {
+                                            $qty = $_POST['qty'];
+                                            $book_id = $_POST['book_id'];
+                                            $id = $_POST['id'];
+                                            $sql = "UPDATE stock SET qty = '$qty', book_id = '$book_id' WHERE stock_id = '$id'";
+                                            if (mysqli_query($conn, $sql)) {
                                                 echo "Success!!";
-                                            }else{
-                                                echo "Fail: ".$sql."<br>". mysqli_error($conn);
+                                                // $url = "?page=bank";
+                                                // header('Location: ' . $url);
+                                            } else {
+                                                echo "Fail: " . $sql . "<br>" . mysqli_error($conn);
                                             }
-                                            mysqli_close($conn);
-                                        } 
-                                        // print_r($_POST);
+                                            // mysqli_close($conn);
+                                            $conn->close();
+                                        }
                                         ?>
                                         <form action="" method="post">
-                                        <div class="mb-3">
+                                            <div class="mb-3">
+                                                <input type="hidden" class="form-control" name="id" value="<?php echo $_GET['id'] ?>">
                                                 <label class="form-label">Stock ID</label>
-                                                <input type="text" class="form-control" name="stock_id">
+                                                <input type="text" class="form-control" name="bank_name">
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Book ID</label>
-                                                <input type="text" class="form-control" name="book_id">
+                                                <input type="text" class="form-control" name="bank_no">
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label">Quality</label>
-                                                <input type="text" class="form-control" name="qty">
+                                                <label class="form-label">Quantity</label>
+                                                <input type="text" class="form-control" name="bank_no">
                                             </div>
-                                            <button type="submit" class="btn app-btn-primary">Add</button>
+                                            <button type="submit" class="btn btn-warning">Edit</button>
                                         </form>
                                     </div>
                                     <!--//app-card-body-->
-
                                 </div>
                                 <!--//app-card-->
                             </div>

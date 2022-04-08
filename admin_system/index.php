@@ -70,7 +70,7 @@
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'orders_status') {
                     include('order/index.php'); //order
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'test_page') {
-                    include('bank/insert.php'); //test page
+                    include('stock/edit.php'); //test page
                 }
                 ?>
             </div>

@@ -2,7 +2,6 @@
 require("../connect_db.php");
 $sql = " SELECT * FROM stock"; //query DB
 $rs = mysqli_query($conn, $sql);
-
 ?>
 <?php include('include/script.php') ?>
 <h1 class="app-page-title">Stock</h1>
@@ -23,7 +22,7 @@ $rs = mysqli_query($conn, $sql);
                         <tr>
                             <th scope="col">Stock ID</th>
                             <th scope="col">Book ID</th>
-                            <th scope="col">Quality</th>
+                            <th scope="col">Quantity</th>
                             <th scope="col">Operation</th>
                         </tr>
                     </thead>
@@ -34,8 +33,8 @@ $rs = mysqli_query($conn, $sql);
                                 <td><?= $data['book_id'] ?></td>
                                 <td><?= $data['qty'] ?></td>
                                 <td>
-                                    <a href="?page=<?=$_GET['page']?>&function=update&id=<?=$data['book_id']?>" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="?page=<?=$_GET['page']?>&function=delete&id=<?=$data['book_id']?>" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="?page=<?=$_GET['page']?>&function=update&id=<?=$data['stock_id']?>" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

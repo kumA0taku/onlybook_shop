@@ -38,13 +38,13 @@ $bookID = mysqli_query($conn, $sql);
                                         // print_r($_POST);
                                         ?>
                                         <form action="" method="post">
-                                             <div class="mb-3">
+                                            <div class="mb-3">
                                                 <label class="form-label">Stock ID</label>
                                                 <input type="text" class="form-control" name="stock_id" value="<?= (isset($_POST['stock_id'])
                                                                                                                     && !empty($_POST['stock_id']) ? $_POST['stock_id'] : '') ?> " autocomplete="off">
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label">Quality</label>
+                                                <label class="form-label">Quantity</label>
                                                 <input type="text" class="form-control" name="qty" value="<?= (isset($_POST['qty'])
                                                                                                                 && !empty($_POST['qty']) ? $_POST['qty'] : '') ?> " autocomplete="off">
                                             </div>
