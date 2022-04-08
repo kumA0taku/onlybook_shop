@@ -34,8 +34,8 @@ $rs = mysqli_query($conn, $sql);
                                 <td><?= $data['book_id'] ?></td>
                                 <td><?= $data['qty'] ?></td>
                                 <td>
-                                    <a href="?page=<?=$_GET['page']?>&function=update&id=<?=$data['stock_id']?>" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="?page=<?=$_GET['page']?>&function=update&id=<?=$data['book_id']?>" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="?page=<?=$_GET['page']?>&function=delete&id=<?=$data['book_id']?>" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

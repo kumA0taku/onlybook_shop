@@ -58,6 +58,7 @@
                                         
                                         $sql = "INSERT INTO book (book_id, category_id, book_name, price, description)
                                         VALUES ('$id','$category','$name', '$price','$description')";
+                                        
 
                                         if (mysqli_query($conn, $sql)) {
                                         echo "เพิ่มข้อมูลสำเร็จ";
@@ -79,6 +80,7 @@
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">ID </label>
+                                        
 									    <input type="text" class="form-control" name="book_id" placeholder="id" value="<?=(isset($_POST
                                         ['book_id']) ? $_POST['book_id'] : "")?>" autocomplete="off" required>
 									</div>
