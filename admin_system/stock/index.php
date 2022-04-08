@@ -1,5 +1,5 @@
 <?php
-require("../connect_db.php");
+require("connect_db.php");
 $sql = " SELECT * FROM stock"; //query DB
 $query = mysqli_query($conn, $sql);
 ?>
@@ -13,7 +13,7 @@ $query = mysqli_query($conn, $sql);
                 <div class="row g-3 mb-4 align-items-center justify-content-between">
                     <div class="col-auto">
                         <a href="?page=<?=$_GET['page']?>&function=add_stock" class="btn btn-success ">
-                            Add Bank
+                            Add Stock
                         </a>
                     </div>
                 </div>
