@@ -41,7 +41,7 @@
                                         <form action="" method="post">
                                             <div class="mb-3">
                                                 <label class="form-label">Bank Name</label>
-                                                <input type="text" class="form-control" name="bank_name">
+                                                <input type="text" class="form-control" name="bank_name" value="<?=$result['bank_name']?>" autocomplete="off" require>
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Bank No</label>
