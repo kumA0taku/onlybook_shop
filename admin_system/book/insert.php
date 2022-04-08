@@ -1,7 +1,6 @@
-
 <?php include('../connect_db.php') ?>
 <?php include('include/script.php') ?>
-<h1 class="app-page-title">Book</h1>
+<h1 class="app-page-title">Add Book</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">
     <div class="col-12 col-md-12">
@@ -52,13 +51,14 @@
                                                 echo "ประเภทไฟล์ไม่ถูกต้อง";
                                             }
                                         }else{
-                                            $filename ="ไม่ได้เลือกรูปภาพ";
+                                            $filename ="ค้นไม่พบ";
                                         }
                                         echo $filename;
                                         exit();
                                         
                                         $sql = "INSERT INTO book (book_id, category_id, book_name, price, description)
                                         VALUES ('$id','$category','$name', '$price','$description')";
+                                        
 
                                         if (mysqli_query($conn, $sql)) {
                                         echo "เพิ่มข้อมูลสำเร็จ";
@@ -75,11 +75,12 @@
                                         <div class="mb-23">
                                         <img id="preview" width="150" height="150">
                                         </div>
-                                        <button onclick="return triggerFile();" class="btn vtb-success">เลือกรูปภาพ</button>
+                                        <!button onclick="return triggerFile();" class="btn vtb-success">เลือกรูปภาพ</!button>
 									    <input type="file" class="form-control" name="book_img" id="image">
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">ID </label>
+                                        
 									    <input type="text" class="form-control" name="book_id" placeholder="id" value="<?=(isset($_POST
                                         ['book_id']) ? $_POST['book_id'] : "")?>" autocomplete="off" required>
 									</div>
@@ -92,12 +93,12 @@
                                     <div class="mb-3">
 									    <label  class="form-label">Name</label>
 									    <input type="text" class="form-control" name="book_name" placeholder="ชื่อหนังสือ" value="<?=(isset($_POST
-                                        ['Name']) ? $_POST['Name'] : "")?>" autocomplete="off"  required>
+                                        ['book_name']) ? $_POST['book_name'] : "")?>" autocomplete="off"  required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Price </label>
 									    <input type="text" class="form-control" name="price" placeholder="ราคา" value="<?=(isset($_POST
-                                        ['Price']) ? $_POST['Price'] : "")?>" autocomplete="off" required>
+                                        ['price']) ? $_POST['price'] : "")?>" autocomplete="off" required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Description</label>
