@@ -123,8 +123,10 @@ if (isset($_POST) && !empty($_POST))
                                         <img id="preview" class="rounded float-start" width="100" height="100">
                                         </div>
                                         <!button onclick="return triggerFile();" class="btn vtb-success"></!button>
+                                        
 									    <input type="file" class="form-control" name="book_img" id="image" value="<?= (isset($_POST['book_img'])
                                         && !empty($_POST['book_img']) ? $_POST['book_img'] : '') ?>" style=" ">
+                                        
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">ID </label>

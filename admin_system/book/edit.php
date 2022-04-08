@@ -2,16 +2,22 @@
 
 ?>
 <?php include('include/script.php');
+if(isset($_GET['book_id']) && !empty($_GET['book_id'])){
+    $id =$_GET['book_id'];
+    $sql = "SELECT * FROM book WHERE book_id ='$id'";
+    $query = mysqli_query($conn,$sql);
+    $result = mysqli_fetch_assoc($query);
+} 
 if (isset($_POST) && !empty($_POST)) 
 {
 
     // print_r($_POST);
-    $id = $_POST["book_id"];
+    $id_b = $_POST["book_id"];
     $name = $_POST["book_name"];
     $price = $_POST["price"];
     $category = $_POST["category_id"];
     $description = $_POST["description"];
-
+    $oldimage =$_POST['oldimage'];
    
 
     if(isset($_FILES["book_img"]["name"]) && !empty($_FILES["book_img"]["name"])){
@@ -68,11 +74,10 @@ if (isset($_POST) && !empty($_POST))
         echo $alert;
         exit();
     }
-    echo $filename;
+    echo $filename = $oldimage ;
     exit();
 
-    $sql = "INSERT INTO book (book_id, category_id, book_name, price, description)
-    VALUES ('$id','$category','$name', '$price','$description')";
+    $sql = "UPDATE book SET book_id='$id_b', category_id='$category', book_name='$name', price='$price', description='$description',book_img='$filename' WHERE book_id='$id'";
     
     if (mysqli_query($conn, $sql)) 
     {
@@ -88,6 +93,7 @@ if (isset($_POST) && !empty($_POST))
 
         mysqli_close($conn);
 }
+
 ?>
 <div class="row justify-content-between">
     <div class="col-auto">
@@ -109,7 +115,7 @@ if (isset($_POST) && !empty($_POST))
 
                 <div class="app-content pt-3 p-md-3 p-lg-4">
                     <div class="container-xl">
-                        <h1 class="app-page-title" style="font-size: 120%;">Add Book</h1>
+                        <h1 class="app-page-title" style="font-size: 120%;">Edit Book</h1>
                         <hr class="mb-4">
                         <div class="row g-4 settings-section">
                             <div class="col-12 col-md-8">
@@ -120,37 +126,32 @@ if (isset($_POST) && !empty($_POST))
                                     <div class="mb-3">
 									    <label  class="form-label">Image</label>
                                         <div class="mb-23">
-                                        <img id="preview" class="rounded float-start" width="100" height="100">
+                                        <img id="preview" src="upload/admin/<?=$result['book_img']?>" class="rounded float-start" width="100" height="100">
                                         </div>
                                         <!button onclick="return triggerFile();" class="btn vtb-success"></!button>
-									    <input type="file" class="form-control" name="book_img" id="image" value="<?= (isset($_POST['book_img'])
-                                        && !empty($_POST['book_img']) ? $_POST['book_img'] : '') ?>" style=" ">
+									    <input type="file" class="form-control" name="book_img" id="image" value="<?=$result['book_img']?>" style=" ">
+                                        <input type="hidden" name="oldimage" value="<?=$result['book_img']?>">
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">ID </label>
-									    <input type="text" class="form-control" name="book_id" placeholder="id" value="<?= (isset($_POST['book_id'])
-                                        && !empty($_POST['book_id']) ? $_POST['book_id'] : '') ?>" autocomplete="off" required>
+									    <input type="text" class="form-control" name="book_id" placeholder="id" value="<?=$result['book_id']?>" autocomplete="off" required>
 									</div>
 								    
                                     <div class="mb-3">
 									    <label  class="form-label">Category</label>
-									    <input type="text" class="form-control" name="category_id" placeholder="หมวดหมู่" value="<?= (isset($_POST['category_id'])
-                                        && !empty($_POST['category_id']) ? $_POST['category_id'] : '') ?>" autocomplete="off" required>
+									    <input type="text" class="form-control" name="category_id" placeholder="หมวดหมู่" value="<?=$result['category_id']?>" autocomplete="off" required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Name</label>
-									    <input type="text" class="form-control" name="book_name" placeholder="ชื่อหนังสือ" value="<?= (isset($_POST['book_name'])
-                                        && !empty($_POST['book_name']) ? $_POST['book_name'] : '') ?>" autocomplete="off"  required>
+									    <input type="text" class="form-control" name="book_name" placeholder="ชื่อหนังสือ" value="<?=$result['book_name']?>" autocomplete="off"  required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Price </label>
-									    <input type="text" class="form-control" name="price" placeholder="ราคา" value="<?= (isset($_POST['price'])
-                                        && !empty($_POST['price']) ? $_POST['price'] : '') ?>" autocomplete="off" required>
+									    <input type="text" class="form-control" name="price" placeholder="ราคา" value="<?=$result['price']?>" autocomplete="off" required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Description</label>
-									    <input type="text" class="form-control" name="description" placeholder="รายละเอียด" value="<?= (isset($_POST['description'])
-                                        && !empty($_POST['description']) ? $_POST['description'] : '') ?>" autocomplete="off" required>
+									    <input type="text" class="form-control" name="description" placeholder="รายละเอียด" value="<?=$result['description']?>" autocomplete="off" required>
 									</div>
                                     
 									<button type="submit" class="btn app-btn-primary" >Save </button>
