@@ -2,6 +2,7 @@
 require("../connect_db.php");
 $sql = " SELECT * FROM stock"; //query DB
 $rs = mysqli_query($conn, $sql);
+
 ?>
 <?php include('include/script.php') ?>
 <h1 class="app-page-title">Stock</h1>
