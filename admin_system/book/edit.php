@@ -13,7 +13,7 @@
                                 <?php 
                                 if(isset($_GET['book_id']) && !empty($_GET['book_id'])){
                                     $id = $_GET["book_id"];
-                                    $sql = "SELECT * FROM book WHERE book_id='$id'";
+                                    $sql = "SELECT * FROM book WHERE book_id='$id' ";
                                     $query = mysqli_query($conn,$sql);
                                     $result = mysqli_fetch_assoc($query);}
                                     //print_r($_POST);
@@ -29,7 +29,7 @@
                                         $price = $_POST["price"];
                                         $category = $_POST["category_id"];
                                         $description = $_POST["description"];
-                                        $oldimage =$_POST['oldimage'];
+                                        $old_image =$_POST['old_image'];
 
                                         if(isset($_FILES["book_img"]["name"]) && !empty($_FILES["book_img"]["name"])){
                                             $extension = array("jpeg","jpg","png");
@@ -62,10 +62,10 @@
                                         echo $filename;
                                         exit();
                                         
-                                        $sql = "UPDATE book SET book_id='$id',category='$category',book_name='$name',price='$price',description='$description', book_img='$image' WHERE id='' " ;
+                                        $sql = "UPDATE book SET book_id ='$id',category='$category',book_name='$name',price='$price',description='$description', book_img='$image' WHERE id='' " ;
 
                                         if (mysqli_query($conn, $sql)) {
-                                        echo $oldimage;
+                                        echo $old_image;
                                         } else {
                                         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                                             }
@@ -97,7 +97,7 @@
                                         </div>
                                         <button onclick="return triggerFile();" class="btn vtb-success">เลือกรูปภาพ</button>
 									    <input type="file" class="form-control" name="book_img" id="image" style="display:none">
-                                        <input type="hidden" name="oldimage" value="<?=$result['book_img']?>">
+                                        <input type="hidden" name="old_image" value="<?=$result['book_img']?>">
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">ID </label>
@@ -123,7 +123,7 @@
                                     <div class="mb-3">
 									    <label  class="form-label">Description</label>
 									    <input type="text" class="form-control" name="description" placeholder="รายละเอียด" 
-                                        value="<?=$result['Description']?>" autocomplete="off" required>
+                                        value="<?=$result['description']?>" autocomplete="off" required>
 									</div>
                                     
 									<button type="submit" class="btn app-btn-primary" >Save </button>

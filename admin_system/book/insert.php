@@ -51,7 +51,7 @@
                                                 echo "ประเภทไฟล์ไม่ถูกต้อง";
                                             }
                                         }else{
-                                            $filename ="ไม่ได้เลือกรูปภาพ";
+                                            $filename ="ค้นไม่พบ";
                                         }
                                         echo $filename;
                                         exit();
@@ -91,12 +91,12 @@
                                     <div class="mb-3">
 									    <label  class="form-label">Name</label>
 									    <input type="text" class="form-control" name="book_name" placeholder="ชื่อหนังสือ" value="<?=(isset($_POST
-                                        ['Name']) ? $_POST['Name'] : "")?>" autocomplete="off"  required>
+                                        ['book_name']) ? $_POST['book_name'] : "")?>" autocomplete="off"  required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Price </label>
 									    <input type="text" class="form-control" name="price" placeholder="ราคา" value="<?=(isset($_POST
-                                        ['Price']) ? $_POST['Price'] : "")?>" autocomplete="off" required>
+                                        ['price']) ? $_POST['price'] : "")?>" autocomplete="off" required>
 									</div>
                                     <div class="mb-3">
 									    <label  class="form-label">Description</label>

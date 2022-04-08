@@ -20,7 +20,7 @@
                                         <?php
                                         if(isset($_GET['book_id']) && !empty($_GET['book_id'])){
                                             $id = $_GET["book_id"];
-                                            $sql = "SELECT * FROM stock WHERE book_id='$id'";
+                                            $sql = "SELECT * FROM stock WHERE book_id='$id' ";
                                             $query = mysqli_query($conn,$sql);
                                             $result = mysqli_fetch_assoc($query);}
                                         if(isset($_POST) && !empty($_POST)){
