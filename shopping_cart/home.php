@@ -4,7 +4,7 @@ $sql = " SELECT * FROM book"; //query DB
 $rs = mysqli_query($conn, $sql);
 ?>
 <?php include('include/script.php') ?>
-<h1 class="app-page-title">Bank</h1>
+<h1 class="app-page-title">Book list</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">
     <div class="col-12 col-md-12">
@@ -13,7 +13,7 @@ $rs = mysqli_query($conn, $sql);
                 <div class="row g-3 mb-4 align-items-center justify-content-between">
                     <div class="col-auto">
                         <a href="?page=<?=$_GET['page']?>&function=add" class="btn btn-success ">
-                            Add Bank
+                            Cart
                         </a>
                     </div>
                 </div>

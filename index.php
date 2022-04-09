@@ -22,7 +22,7 @@
                 }
                 elseif(isset($_GET['page']) && $_GET['page'] == 'book')
                 {
-                    include('shopping_cart/home.php'); //book
+                    include('shopping_cart/home.php'); //go to book <<<
                 }
                 elseif(isset($_GET['page']) && $_GET['page'] == 'category')
                 {
