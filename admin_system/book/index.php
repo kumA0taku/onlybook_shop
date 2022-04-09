@@ -36,6 +36,7 @@ $query = mysqli_query($conn, $sql);
                     </tr>
                 </thead>
                 <tbody class="text-center">
+                
                     <?php foreach ($query as $data); ?>
                         <tr>
                         <td class="align-middle"><?= $data['book_id'] ?></td>
