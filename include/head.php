@@ -16,5 +16,8 @@
 
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/assets/css/portal.css">
+    
+    <!-- datatable css -->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 
 </head>
