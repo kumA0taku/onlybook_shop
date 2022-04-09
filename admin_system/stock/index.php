@@ -51,5 +51,22 @@ $rs = mysqli_query($conn, $sql);
     $(document).ready(function() {
         $('#tabelAll').DataTable();
     });
+    // $(document).on('click','.delete', function(){
+    //     var id =$(this).attr('stock_id');
+    //     Dialogify.confirm("<h3 class='textdanger'></b>Are you sure you want to remove this data?</b></h3>",{
+    //         ok:function(){
+    //             $.ajax({
+    //                 url:"delete.php",
+    //                 method:"POST",
+    //                 data:{id:id},
+    //                 success:function(date)
+    //             })
+    //         },
+    //         cancel:function(){
+    //             this.close();
+
+    //         }
+    //     })
+    // });
 </script>
 
