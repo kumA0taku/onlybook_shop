@@ -35,6 +35,7 @@
         </div>
     <?php endif; ?>
 
+    <h1 class="app-page-title" style="font-size: 120%;">Login</h1>
 
     <form action="login.php" method="post">
 

@@ -52,6 +52,7 @@
 </head>
 <body>
 
+<h1 class="app-page-title" style="font-size: 120%;">Register</h1>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     
         <label for="username">Username</label>
@@ -70,7 +71,7 @@
     
     </form>
 
-    <a href="index.php">Go back to index</a>
+    <a href="index.php">Go back to Login</a>
     
 </body>
 </html>
