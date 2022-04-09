@@ -4,7 +4,7 @@ $sql = " SELECT * FROM book"; //query DB
 $rs = mysqli_query($conn, $sql);
 ?>
 <?php include('include/script.php') ?>
-<h1 class="app-page-title">Bank</h1>
+<h1 class="app-page-title">Book list</h1>
 <hr class="mb-4">
 <div class="row g-4 setting-section">
     <div class="col-12 col-md-12">
@@ -12,28 +12,33 @@ $rs = mysqli_query($conn, $sql);
             <div class="app-card-body">
                 <div class="row g-3 mb-4 align-items-center justify-content-between">
                     <div class="col-auto">
-                        <a href="?page=<?=$_GET['page']?>&function=add" class="btn btn-success ">
-                            Add Bank
+                        <a href="?page=<?= $_GET['page'] ?>&function=add" class="btn btn-success ">
+                            Cart
                         </a>
                     </div>
                 </div>
-    <table class="table" id="tabelAll">
-        <thead>
-            <tr>
-                <th scope="col">Pictuer</th>
-                <th scope="col">Book Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Operation</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php while ($row = mysqli_fetch_assoc($rs)) {
-            print("<tr><td><img src= 'img/" . $row["book_img"] . " 'height= '200' ' width = '250'></td></tr>");
-            print("<tr><td>" . $row["book_name"] . "</td></tr>");
-            print("<tr><td><a href= cart.php? ID=" . $row["book_id"] . "> Add to cart </a></td></tr>");
-        } ?>
-        </tbody>
-    </table>
+                <table class="table" id="tabelAll">
+                    <thead>
+                        <tr>
+                            <th scope="col">Picture</th>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($rs as $data) : ?>
+                            <tr>
+                                <td><img src="image/<?= $data['book_img'] ?>" width="100" height="100"></td>
+                                <td><?= $data['book_name'] ?></td>
+                                <td><?= $data['price'] ?></td>
+                                <td>
+                                    <a href="?page=<?= $_GET['page'] ?>&function=update&id=<?= $data['book_id'] ?>" class="btn btn-sm btn-warning">Add to Cart</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

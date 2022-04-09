@@ -15,22 +15,9 @@
                 {
                     include('/shopping_cart/home.php'); //dont touch
                 }
-                
-                elseif(isset($_GET['page']) && $_GET['page'] == 'home')
-                {
-                    include('shopping_cart/home.php'); //bank
-                }
                 elseif(isset($_GET['page']) && $_GET['page'] == 'book')
                 {
-                    include('shopping_cart/home.php'); //book
-                }
-                elseif(isset($_GET['page']) && $_GET['page'] == 'category')
-                {
-                    include('category/index.php'); //category
-                }
-                elseif(isset($_GET['page']) && $_GET['page'] == 'orders_status')
-                {
-                    include('order/index.php'); //order
+                    include('shopping_cart/home.php'); //go to book <<<
                 }
                 ?>
             </div>
