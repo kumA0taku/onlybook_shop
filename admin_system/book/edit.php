@@ -12,7 +12,7 @@ if (isset($_POST) && !empty($_POST))
 {
 
     // print_r($_POST);
-    $id_b = $_POST["book_id"];
+    $id = $_POST["book_id"];
     $name = $_POST["book_name"];
     $price = $_POST["price"];
     $category = $_POST["category_id"];
@@ -77,7 +77,7 @@ if (isset($_POST) && !empty($_POST))
     echo $filename = $oldimage ;
     exit();
 
-    $sql = "UPDATE book SET book_id='$id_b', category_id='$category', book_name='$name', price='$price', description='$description',book_img='$filename' WHERE book_id='$id'";
+    $sql = "UPDATE book SET book_id='$id', category_id='$category', book_name='$name', price='$price', description='$description',book_img='$filename' WHERE book_id='$id'";
     
     if (mysqli_query($conn, $sql)) 
     {

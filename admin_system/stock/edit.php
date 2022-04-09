@@ -1,92 +1,69 @@
-<?php include('../connect_db.php');
-if(isset($_GET['stock_id']) && !empty($_GET['stock_id']))
-{
-
+<?php include('../connect_db.php') ?>
+<?php include('include/script.php') ;
+if(isset($_GET['stock_id']) && !empty($_GET['stock_id'])){
     $id =$_GET['stock_id'];
-    $s = "SELECT * FROM stock WHERE stock ='$id'";
-    $query = mysqli_query($conn,$s);
+    $sql = "SELECT * FROM stock WHERE stock_id ='$id'";
+    $query = mysqli_query($conn,$sql);
     $result = mysqli_fetch_assoc($query);
-} 
-if (isset($_POST) && !empty($_POST)) {
-
-    // print_r($_POST);
-    $stock_id = $_POST['stock_id'];
-    $book_id = $_POST['book_id'];
-    $Quality = $_POST['qty'];
-
-    $sql = "UPDATE book SET stock_id='$stock_id', book_id='$book_id', qty='$Quality' WHERE stock_id='$id'";
-    if (mysqli_query($conn, $sql)) {
-        //echo "Success!!";
-    $alert ='<script type="text/javascript>">';
-    $alert .= 'alert("เพิ่มข้อมูลสำเร็จ");';
-    $alert .= 'window.location.href ="?page=stock&function=add";';
-    $alert .= '</script>';
-    echo $alert;
-    } else {
-        echo "Fail: " . $sql . "<br>" . mysqli_error($conn);
-    }
-    mysqli_close($conn);
-}
-$sq = "SELECT book_id FROM book";
-$bookID = mysqli_query($conn, $sq);
-?>
-<?php include('include/script.php');
-
-?>
-
-<div class="row justify-content-between">
-    <div class="col-auto">
-    <h1 class="app-page-title mb-0">Stock</h1>
-    </div>
-    <div class="col-auto">
-    <a href="?page=<?=$_GET['page']?>" class="btn btn-success float-left">back</a>
-    </div>
-</div>
-
+    $contacts = mysql_query("SELECT * FROM stock WHERE stock_id ='$id'")
+} ?>
+<h1 class="app-page-title">Stock</h1>
 <hr class="mb-4">
+<div class="row g-4 setting-section">
     <div class="col-12 col-md-12">
         <div class="app-card app-card-setting shadow-sm p-4">
             <div class="app-card-body">
 
                 <div class="app-content pt-3 p-md-3 p-lg-4">
                     <div class="container-xl">
-                        <h1 class="app-page-title" style="font-size: 120%;">Add Stock</h1>
+                        <h1 class="app-page-title" style="font-size: 120%;">Edit Stock</h1>
                         <hr class="mb-4">
                         <div class="row g-4 settings-section">
                             <div class="col-12 col-md-8">
                                 <div class="app-card app-card-settings shadow-sm p-4">
                                     <div class="app-card-body">
-                                        
+                                        <?php
+                                        if ($_POST) 
+                                        {
+                                            $qty = $_POST['qty'];
+                                            $book_id = $_POST['book_id'];
+                                            $id = $_POST['stock_id'];
+                                            $contacts = mysql_query("
+        SELECT * FROM contacts ORDER BY ID ASC") or die( mysql_error() );
+    
+    // If results
+    if( mysql_num_rows( $contacts ) > 0 )
+    ?>
+                                            $sql = "UPDATE stock SET qty = '$qty', book_id = '$book_id' WHERE stock_id = '$id'";
+                                            if (mysqli_query($conn, $sql)) {
+                                                echo "Success!!";
+                                                // $url = "?page=bank";
+                                                // header('Location: ' . $url);
+                                            } else {
+                                                echo "Fail: " . $sql . "<br>" . mysqli_error($conn);
+                                            }
+                                            // mysqli_close($conn);
+                                            $conn->close();
+                                        }
+                                        ?>
                                         <form action="" method="post">
                                             <div class="mb-3">
+                                                
                                                 <label class="form-label">Stock ID</label>
-                                                <input type="text" class="form-control" name="stock_id" value="<?=$data['stock_id']?>" autocomplete="off">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Quality</label>
-                                                <input type="text" class="form-control" name="qty" value="<?=$data['qty']?>" autocomplete="off">
+                                                <input type="text" class="form-control" name="stock_id" value="<?=$result['stock_id']?>">
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Book ID</label>
-                                                <input type="text" class="form-control" name="book_id" value="<?=$data['book_id']?>" autocomplete="off" disabled>
-                                                <select name="book_id" >
-                                                    <?php
-                                                    while ($book_msqli = mysqli_fetch_assoc($bookID)) {
-                                                    ?>
-                                                        <option value="<?php print($book_msqli['book_id']); ?>"><?php print($book_msqli['book_id']); ?>
-                                                        </option>
-                                                    <?php
-                                                    }
-                                                    ?>
-                                                </select><br>
+                                                <input type="text" class="form-control" name="book_id" value="<?=$result['book_id']?>">
                                             </div>
-                                            <div class="modal-footer">
-                                            <button type="submit" class="btn app-btn-primary">Add</button>
+                                            <div class="mb-3">
+                                                <label class="form-label">Quantity</label>
+                                                <input type="text" class="form-control" name="qty" value="<?=$result['qty']?>">
                                             </div>
+                                            <button type="submit" class="btn btn-warning">Edit</button>
                                         </form>
                                     </div>
                                     <!--//app-card-body-->
-
                                 </div>
                                 <!--//app-card-->
                             </div>
@@ -99,8 +76,4 @@ $bookID = mysqli_query($conn, $sq);
             </div>
         </div>
     </div>
-
-                                                                                                    
-                                                                                                    
-
-                                                                                                    
+</div>

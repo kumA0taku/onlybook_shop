@@ -3,7 +3,7 @@
 
 if(isset($_GET['book_id']) && !empty($_GET['book_id'])){
     $id = $_GET["book_id"];
-    $sql="DELETE FROM bank WHERE book_id ='$id'";
+    $sql="DELETE FROM book WHERE book_id ='$id'";
    }   //print_r($_POST);
    if(mysqli_query($conn,$sql)){
        $alert = '<script type="text/javascript">';
