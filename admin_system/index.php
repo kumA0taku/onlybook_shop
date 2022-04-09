@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include('include/head.php') ?>
@@ -19,11 +20,35 @@
                     {
                         include('stock/insert.php');
                     }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'update')
+                    {
+                        include('stock/edit.php');
+                    }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'delete')
+                    {
+                        include('stock/delete.php');
+                    }
                     else{
                         include('stock/index.php'); 
                     }
-                } elseif (isset($_GET['page']) && $_GET['page'] == 'book') {
-                    include('book/index.php'); //book
+                    
+                    }
+                    elseif (isset($_GET['page']) && $_GET['page'] == 'book') {
+                    if(isset($_GET['function']) && $_GET['function'] == 'add')
+                    {
+                        include('book/insert.php');
+                    }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'update')
+                    {
+                        include('book/edit.php');
+                    }
+                    elseif(isset($_GET['function']) && $_GET['function'] == 'delete')
+                    {
+                        include('book/delete.php');
+                    }
+                    else{
+                        include('book/index.php'); 
+                    }
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'bank') { //bank
                     if(isset($_GET['function']) && $_GET['function'] == 'add')
                     {
@@ -59,7 +84,7 @@
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'orders_status') {
                     include('order/index.php'); //order
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'test_page') {
-                    include('bank/insert.php'); //test page
+                    include('stock/edit.php'); //test page
                 }
                 ?>
             </div>

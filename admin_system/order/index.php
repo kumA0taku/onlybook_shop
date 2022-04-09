@@ -1,7 +1,7 @@
 <?php
 require("../connect_db.php");
 $sql = "SELECT * FROM order_book 
-INNER JOIN user1 ON order_book.user_id = user1.id;"; //query DB
+INNER JOIN user ON order_book.user_id = user.id;"; //query DB
 $rs = mysqli_query($conn, $sql);
 ?>
 <?php include('include/script.php') ?>
