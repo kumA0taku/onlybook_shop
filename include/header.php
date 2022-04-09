@@ -1,4 +1,4 @@
-<header class="app-header fixed-top bg-danger"> 
+<header class="app-header fixed-top bg-info"> 
     <div class="app-header-inner">
         <div class="container-fluid py-2">
             <div class="app-header-content">
