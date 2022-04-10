@@ -86,9 +86,13 @@
                 } elseif (isset($_GET['page']) && $_GET['page'] == 'test_page') {
                     include('stock/edit.php'); //test page
                 }
+                //logout
+                // else{
+                //     include('/onlybook_shop/login/index.php'); //logout
+                // }
                 ?>
             </div>
-            <!--//container-fluid-->
+            <!--//container-fluid log_out-->
         </div>
         <!--//app-content-->
         <?php include('include/footer.php') ?>

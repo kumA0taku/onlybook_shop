@@ -22,9 +22,8 @@
             $_SESSION['userlevel'] = $row['userlevel'];
 
             if ($_SESSION['userlevel'] == 'a') {
-                header("Location: /onlybook_shop/admin_system/index.php");
+                header("Location: /onlybook_shop/admin_system/?page=stock");
             }
-
             if ($_SESSION['userlevel'] == 'm') {
                 header("Location: /onlybook_shop/?page=book");
             }
@@ -35,6 +34,3 @@
     } else {
         header("Location: index.php");
     }
-
-
-?>

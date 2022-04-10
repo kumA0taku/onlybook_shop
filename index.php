@@ -11,20 +11,24 @@
         <div class="app-content pt-3 p-md-3 p-lg-4">
             <div class="container-xl">
                 <?php
-                if(!isset($_GET['page']) && empty($_GET['page']))
-                {
+                if (!isset($_GET['page']) && empty($_GET['page'])) {
                     include('/shopping_cart/home.php'); //dont touch
-                }
-                elseif(isset($_GET['page']) && $_GET['page'] == 'book')
-                {
+                } elseif (isset($_GET['page']) && $_GET['page'] == 'book') {
                     include('shopping_cart/home.php'); //go to book <<<
+                } elseif (isset($_GET['page']) && $_GET['page'] == 'check_order_status') {
+
+                    if (isset($_GET['function']) && $_GET['function'] == 'check_order') {
+                        include('user_order/check_order.php');
+                    } else {
+                        include('user_order/index.php'); //go to check_order_status <<<
+                    }
                 }
                 ?>
             </div>
             <!--//container-fluid-->
         </div>
         <!--//app-content-->
-        <?php include('include/footer.php') ?>
+        <?//php include('include/footer.php') ?>
         <!--//app-footer-->
     </div>
     <!--//app-wrapper-->
