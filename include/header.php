@@ -1,3 +1,6 @@
+<?php 
+session_start();
+require("connect_db.php");?>
 <header class="app-header fixed-top bg-info">
     <div class="app-header-inner">
         <div class="container-fluid py-2">
@@ -191,7 +194,6 @@
                         <!--//nav-link-->
                     </li>
                     <li class="nav-item">
-                        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                         <a class="nav-link  <?php echo isset($_GET['page']) && $_GET['page'] == 'check_order_status' ? 'active' : '' ?>" href="?page=check_order_status">
                             <span class="nav-icon">
                             </span>
@@ -252,7 +254,7 @@
                     <ul class="app-menu footer-menu list-unstyled">
 
                         <li class="nav-item">
-                            <a class="nav-link <?php echo isset($_GET['page']) && $_GET['page'] == 'orders_status' ? 'active' : '' ?>" href="/onlybook_shop/login/index.php">
+                            <a class="nav-link <?php echo isset($_GET['page']) && $_GET['page'] == 'logout' ? 'active' : '' ?>" href="/onlybook_shop/login/index.php">
                                 <!-- focus that-->
                                 <span class="nav-link-text">Logout</span>
                             </a>
