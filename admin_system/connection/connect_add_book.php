@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","onlybook","123456","onlybook");
+$conn = mysqli_connect("localhost","root","YOUR_ROOT_PASSWORD","onlybook");
 
 // Check connection
 if (mysqli_connect_errno()) {

@@ -1,8 +1,8 @@
 <?php 
 class DBController {
     //my PC
-private $user="onlybook";
-private $pass="123456";
+private $user="root";
+private $pass="YOUR_ROOT_PASSWORD";
 private $db="onlybook";
 private $host="localhost";
 private $conn;

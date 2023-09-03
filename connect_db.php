@@ -1,7 +1,11 @@
 <?php
     //my PC
-    $user="onlybook";
-    $pass="123456";
+    // $user="onlybook";
+    // $pass="123456";
+    // $db="onlybook";
+    // $host="localhost";
+    $user="root";
+    $pass="YOUR_ROOT_PASSWORD";
     $db="onlybook";
     $host="localhost";
 
