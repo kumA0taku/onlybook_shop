@@ -1,7 +1,7 @@
 <?php
     //my PC
 $user="root";
-$pass="YOUR_ROOT_PASSWORD";
+$pass="";
 $db="onlybook";
 $host="localhost";
 

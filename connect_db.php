@@ -5,7 +5,7 @@
     // $db="onlybook";
     // $host="localhost";
     $user="root";
-    $pass="YOUR_ROOT_PASSWORD";
+    $pass="";
     $db="onlybook";
     $host="localhost";
 

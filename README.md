@@ -1,6 +1,7 @@
 # onlybook_shop
 Project database from we group "onlyBook Shop"
 
+```
 ---WARNING--
 dont forget change connectDB
     /*
@@ -9,5 +10,7 @@ dont forget change connectDB
     $db="onlybook";
     $host="localhost";
     */
+
+```
 
 ref: https://github.com/xriley/portal-theme-bs5.git

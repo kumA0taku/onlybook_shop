@@ -2,7 +2,7 @@
 class DBController {
     //my PC
 private $user="root";
-private $pass="YOUR_ROOT_PASSWORD";
+private $pass="";
 private $db="onlybook";
 private $host="localhost";
 private $conn;
